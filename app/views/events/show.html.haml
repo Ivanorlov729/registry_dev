@@ -1,0 +1,15 @@
+.row.events-page
+	.row.top-row
+		.top-nav
+			%ul
+				
+	.row.event-list
+		.event_view
+			.row.first-row
+				%p
+					%b Name:
+					= @event.name
+
+				= link_to 'Edit', edit_event_path(@event)
+				\|
+				= link_to 'Back', events_path

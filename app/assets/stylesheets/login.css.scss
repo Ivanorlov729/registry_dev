@@ -1,0 +1,140 @@
+.retrive-password-page{
+	.first-row{
+		text-align: center;
+		height: 136px;
+		.title{
+			width: 420px;
+			height: 76px;
+			margin: auto;
+			background: url("stripe.png") no-repeat scroll 0 -36px transparent;
+			margin-bottom: 20px;
+		}
+		label{
+			font-size:16px;
+			color: white;
+			text-align: center;
+		}
+	}
+	.second-row{
+		background-color: #eaeaea;
+		padding: 50px 0;
+		input.btn-primary{
+			font-size: 20px;
+			margin-left: 180px;
+    	width: 316px;
+    	padding-top: 6px;
+    	padding-bottom: 6px;
+    	border-radius: 0px;
+    	background-image: linear-gradient(to bottom, #111, #111);
+    	border-color: #111;
+    	&:hover{
+    		background-color: #111;
+    	}
+		}
+		.sub-title{
+			font-size: 20px;
+	    font-weight: 300;
+	    margin-bottom: 10px;
+	    margin-top: 26px;
+		}
+		.control-group{
+			.control-label{
+				font-size: 16px;
+				padding-top: 10px;
+			}
+			.controls{
+				input{
+					border-radius: 0 0 0 0;
+			    height: 30px;
+			    width: 300px;
+				}
+			}
+		}
+		a{
+			color: #545454;
+			font-size: 18px;
+			font-weight: 300;
+			&:hover{
+				color: #545454;
+				text-decoration: none;
+			}
+		}
+	}
+	.last-row{
+		a{
+			color:white;
+			&:hover{
+				color:white;
+				text-decoration: none;
+			}
+		}
+		.forgot-password{
+			background: url("stripe.png") no-repeat scroll -5px -1px transparent;			
+    	height: 30px;
+    	width: 30px;
+		}
+	}
+}
+.login-page{
+	.first-row{
+		text-align: center;
+		height: 136px;
+		.title{
+			width: 420px;
+			height: 76px;
+			margin: auto;
+			background: url("stripe.png") no-repeat scroll 0 -36px transparent;
+			margin-bottom: 20px;
+		}
+		label{
+			font-size:16px;
+			color: white;
+			text-align: center;
+		}
+	}
+	.second-row{
+		background-color: #eaeaea;
+		padding-top: 20px;
+		.sub-title{
+			font-size: 20px;
+	    font-weight: 300;
+	    margin-bottom: 10px;
+	    margin-top: 26px;
+		}
+		.control-group{
+			.control-label{
+				font-size: 16px;
+			}
+			.controls{
+				input{
+					border-radius: 0 0 0 0;
+			    height: 30px;
+			    width: 300px;
+				}
+			}
+		}
+		a{
+			color: #545454;
+			font-size: 18px;
+			font-weight: 300;
+			&:hover{
+				color: #545454;
+				text-decoration: none;
+			}
+		}
+	}
+	.last-row{
+		a{
+			color:white;
+			&:hover{
+				color:white;
+				text-decoration: none;
+			}
+		}
+		.forgot-password{
+			background: url("stripe.png") no-repeat scroll -5px -1px transparent;			
+    	height: 30px;
+    	width: 30px;
+		}
+	}
+}

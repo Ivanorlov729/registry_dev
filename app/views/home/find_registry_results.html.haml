@@ -1,0 +1,43 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li.active
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.results-page
+		.results-content
+			%label.page-title Search Results
+			%label The following registries meet your criteria.
+			%label Click on a registrant's name or registry number to view.
+			%br/
+			%br/
+			%table.table
+				%thead
+					%tr
+						%th Registry#
+						%th Registrant
+						%th Co-Registrant
+						%th Event
+						%th Event Date
+				%tbody.registry-content
+					- @registries.each do |registry|						
+						%tr
+							%td
+								%a{:href=>registry_view_path+"?id="+registry.id.to_s}
+									= registry.id
+							%td
+								= registry.registrant_name
+							%td
+								= registry.co_registrant_name
+							%td
+								= registry.event.name
+							%td
+								= registry.event_date.strftime('%d/%m/%Y')
+			.row.last-row
+				= link_to "< SEARCH AGAIN", find_registry_path, :class=>"btn-search"

@@ -1,0 +1,23 @@
+.row.events-page
+	.row.top-row
+		.top-nav
+			%label Event List
+	.row.event-list
+		.event_view
+			.row.first-row
+				%table
+					%tr
+						%th{:style=>"width: 400px;"} Name
+						%th Actions
+						%th
+						%th
+
+					- @events.each do |event|
+						%tr
+							%td= event.name
+							%td= link_to 'Edit', edit_event_path(event)
+							%td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+				%br
+
+				= link_to 'New Event', new_event_path

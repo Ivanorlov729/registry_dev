@@ -1,0 +1,2 @@
+module LuxeRegistriesHelper
+end

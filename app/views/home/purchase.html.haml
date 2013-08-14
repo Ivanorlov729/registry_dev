@@ -1,0 +1,45 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li.active
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.results-page
+		.results-content.purchase-preview{:style=>"background-color: white;border: medium none;padding-left: 0;padding-right: 0;padding-top: 0;width: 980px;"}
+			.row.first-row
+				.span6.img-box
+					= image_tag @offer.merchant_image
+				.span4.purchase-box
+					.row
+						%label.offer-title Bridal Clouture
+					.row{:style=>"text-align:center"}
+						.price-box
+							%label.price= @offer.price
+							%label.offer-option Offer
+					.row
+						%a.btn.btn-purchase.custom-btn{:href=>"#"} PURCHASE
+						%br/
+						%a.btn.btn-registry.custom-btn{:href=>"#"} ADD TO REGISTRY
+					.row
+						%label Come join us and experience true luxury
+						%label Come join us and experience true luxury
+					.row.icons-row
+						.span1
+							%a{:href=>"#"}
+								.stripe-png.t-icon
+						.span1
+							%a{:href=>"#"}
+								.stripe-png.f-icon
+						.span1
+							%a{:href=>"#"}
+								.stripe-png.p-icon
+						.span1
+							%a{:href=>"#"}
+								.stripe-png.email-icon
+

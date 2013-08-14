@@ -1,0 +1,26 @@
+@import "bootstrap";
+body { padding-top: 80px; background-color: #111; }
+@import "bootstrap-responsive";
+
+body {
+	background-color: #111;
+	.container{
+		width:1340px;
+		.content{
+			background-color: transparent;
+			.row{
+				margin-left:0px;
+				.left-side-box{
+					width:320px;
+					margin-left:0px;
+				}
+				.main-content-box{
+					width: 820px;
+				}
+			}
+			.span12{
+				margin-left:0px;
+			}
+		}
+	}        
+}

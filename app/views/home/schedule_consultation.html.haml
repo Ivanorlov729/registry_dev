@@ -1,0 +1,52 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li.active
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.schedule_consultation
+		.consultation_form
+			.row.first-row
+				%label.page-title Schedule A Consultation
+				%label Please fill in the information below. A Luxe Social Events
+				%label Registry & Gift Consultant will contact you within 24 hours.
+			.row.second-row				
+				= form_tag(schedule_consultation_path, :class=>"fomr-vertical") do
+					.row
+						.span4					
+							%label First Name
+							%input{:type=>"text"}
+							%label Last Name
+							%input{:type=>"text"}
+						.span4
+							.row
+								%label Telephone
+								.span1{:style=>"margin-left: 0px;width: 80px;"}
+									%input{:type=>"text", :style=>"width: 60%;"}
+									%span{:style=>"font-family: sans-serif; font-size: 36px;"} -
+								.span1{:style=>"margin-left: 0px;width: 80px;"}
+									%input{:type=>"text", :style=>"width: 60%;"}
+									%span{:style=>"font-family: sans-serif; font-size: 36px;"} -
+								.span1{:style=>"margin-left: 0px;width: 80px;"}
+									%input{:type=>"text", :style=>"width: 60%;"}
+							.row
+								%label Email
+								%input{:type=>"text"}
+								%label Preferred Means of Contact:
+								.span2{:style=>"margin-left:0px; width: 100px;"}
+									.checkbox
+										%label
+											%input{:type=>"checkbox"} Telephone
+								.span2						
+									.checkbox
+										%label
+											%input{:type=>"checkbox"} Email
+					.row{:style=>"margin-top: 100px;text-align: right;"}
+						%input{:type=>"submit", :value=>"SEND", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 40px;"}					
+

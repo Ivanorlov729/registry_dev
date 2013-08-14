@@ -1,0 +1,377 @@
+// Place all the styles related to the luxe_registries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.luxe-registry-page{
+	background-color: #eaeaea;
+	label.page-title{
+		font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+	}
+		
+	.top-row{
+		margin-top: 50px;
+		.top-nav{
+			width: 970px;
+			margin: auto;
+			ul{
+				li{
+					list-style: none;
+					float: left;
+					margin-right:30px;
+					a{
+						color: black;
+						&:hover{
+							color: black;
+							text-decoration: none;
+						}
+					}
+				}
+				li.active{
+					a{
+						font-size:24px;
+						font-weight: 300;
+					}
+				}
+			}
+		}		
+	}
+	.second-row{
+		.registry-list{
+			width: 900px;
+			margin: auto;
+			border: solid 1px #aaa;
+			padding: 30px 50px;
+			margin-bottom: 50px;
+			.last-row{
+				text-align: right;
+				a.new-registry{
+					font-size:18px;
+					font-weight:300;
+					color: black;
+					background-color: rgb(217, 227, 225);
+			    padding: 6px 30px;
+			    width: 120px;
+			    &:hover{
+			    	text-decoration: none;			    	
+			    }
+				}				
+			}
+		}
+		.input-form{
+			width: 900px;
+			margin: auto;
+			border: solid 1px #aaa;
+			padding: 30px 50px;
+			select{
+				border-radius: 12px;
+				height: 36px;
+    		padding-bottom: 6px;
+    		padding-top: 8px;
+    		width: 100px;
+			}
+			label.sub-title{
+				font-size: 16px;
+		    margin-bottom: 20px;
+		    margin-top: 10px;
+			}
+			.row{
+				padding: 10px 20px;
+			}
+			.first-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+			}
+			.second-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+			}
+			.third-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+				.form-horizontal{
+					.control-group{
+						margin-top: 10px;
+						margin-bottom: 10px;
+						label{
+							width:42px;
+						}
+						.controls{
+							margin-left: 50px;
+							input{
+								width: 155px;
+							}
+						}
+					}
+					
+				}
+				.control-group{
+					margin-bottom: 0px;
+				}
+				.luxe_registry_co_registrant_info_use_regis_addr{
+					width: 30px;
+					float: left;
+				}
+			}
+			.fourth-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+			}
+			.fifth-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+
+				.check-box{
+					margin-left: 0px;
+					.control-group{
+						margin-bottom:0px;
+						label{
+							margin-left:30px;
+							text-align: left;
+						}
+						input[type="checkbox"]{
+							margin-left: -222px;
+    					margin-top: 8px;
+						}
+					}
+				}
+				.go-green{
+					margin-left: 0px;
+					.triangle{
+						background-color: white;
+    				box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.28);
+		        content: "";
+		        display: inline-block;
+		        height: 20px;
+		        margin-left: 30px;
+		        position: absolute;
+		        transform: rotate(56deg) skew(0deg, -20deg);
+		        -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.28);
+		        -moz-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.28);        
+		        -webkit-transform: rotate(56deg) skew(0deg,-20deg);
+		        -moz-transform: rotate(56deg) skew(0deg,-20deg);
+		        -ms-transform: rotate(56deg) skew(0deg,-20deg);
+		        -o-transform: rotate(56deg) skew(0deg,-20deg);
+		        transform: rotate(56deg) skew(0deg,-20deg);
+		        width: 20px;
+		        margin-top:-14px;	
+		        z-index:-5
+					}
+					.control-group{
+						width: 330px;
+						float: left;
+						margin-bottom:0px;
+						label{
+							width:300px;
+							margin-left:30px;
+							text-align: left;
+						}
+						input[type="checkbox"]{
+							margin-left: -320px;
+    					margin-top: 8px;
+						}
+					}
+				}
+			}
+			.sixth-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;	
+			}
+		}
+	}	
+	.schedule_consultation{
+		.consultation_form{
+			border: 1px solid #aaa;
+	    margin: auto;
+	    padding: 30px 50px;
+	    margin-bottom: 50px;
+	    width: 900px;
+	    input[type="text"]{
+	    	width: 250px;
+	    	height: 28px;
+	    }
+			label.page-title{
+				font-size: 30px;
+		    margin-bottom: 20px;
+		    margin-top: 10px;
+			}
+			.first-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+			}			
+		}
+	}
+	.find_registry_page{
+		.registry_form{
+			border: 1px solid #aaa;
+	    margin: auto;
+	    padding: 30px 50px;
+	    margin-bottom: 50px;
+	    width: 900px;
+	    input[type="text"]{
+	    	width: 250px;
+	    	height: 28px;
+	    }			
+			label.page-title{
+				font-size: 30px;
+		    margin-bottom: 20px;
+		    margin-top: 10px;
+			}
+			.first-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+			}			
+		}		
+	}
+	.registry_view_page{
+		.registry_view{
+			border: 1px solid #aaa;
+	    margin: auto;
+	    padding: 30px 50px;
+	    margin-bottom: 50px;
+	    width: 900px;
+	    .first-row{
+	    	.span3{
+	    		.span2{
+	    			margin-left: 10px;
+	    			padding-top: 5px;
+	    		}
+	    		.email-icon{
+	    			background: url("stripe.png") no-repeat scroll -140px -6px transparent;
+	    			height: 27px;
+				    margin-left: 0;
+				    width: 30px;
+	    		}
+	    		.print-icon{
+	    			background: url("stripe.png") no-repeat scroll -228px -3px transparent;
+	    			height: 27px;
+				    margin-left: 0;
+				    width: 30px;
+	    		}
+	    	}
+	    }
+	    .second-row{
+	    	.table-hover{
+	    		tr{	    			
+	    			&:hover{
+		    			cursor: pointer;
+		    		}
+	    		}
+	    		
+	    	}
+	    }
+	    .third-row{
+	    	text-align: right;
+
+	    	.btn-purchase{
+	    		background-color: rgb(217, 227, 225);
+				  border-style: none;
+					padding: 6px 30px;
+	    	}
+	    }
+		}
+	}
+	.results-page{
+		.results-content{
+			border: 1px solid #aaa;
+	    margin: auto;
+	    padding: 30px 50px;
+	    margin-bottom: 50px;
+	    width: 900px;
+	    label.page-title{
+				font-size: 30px;
+		    margin-bottom: 20px;
+		    margin-top: 10px;
+			}
+			.last-row{
+				text-align: right;
+				a.btn-search{
+					font-size:18px;
+					font-weight:300;
+					color: black;
+					background-color: rgb(217, 227, 225);
+			    padding: 6px 30px;
+			    width: 120px;
+			    &:hover{
+			    	text-decoration: none;			    	
+			    }
+				}				
+			}
+		}
+	}
+	.purchase-preview{
+		.first-row{
+			.img-box{
+				margin-left: 0px;
+				img{
+					width: 572px;
+					height: 383px;
+				}
+			}
+			.purchase-box{
+				margin-top: 30px;
+				.offer-title{
+					font-size:26px;
+				}
+				.price-box{
+					padding-bottom: 5px;
+    			padding-top: 10px;
+					background-color: rgb(236, 236, 236);
+			    border: 1px solid rgb(204, 204, 204);
+			    margin: 20px auto;
+			    width: 300px;
+			    .price{
+			    	margin-top: 10px;
+			    	font-size:30px;			    	
+			    }
+			    .offer-option{
+			    	margin-top: 10px;
+			    	font-weight: 300;
+			    	font-size: 16px;
+			    }
+				}
+			}
+			.custom-btn{
+				width: 218px;
+				height: 32px;
+    		padding-top: 16px;
+				font-size: 20px;
+			}
+		}
+
+		.icons-row{
+			.span1{
+				width: 30px;
+				margin-left:5px;
+				a{
+					color:black;
+					&:hover{
+						color:black;
+						text-decoration:none;
+					}
+				}
+				.stripe-png{
+					background: url("stripe.png") no-repeat scroll 0 0 transparent;
+		    	width:27px;
+					height:27px;				
+				}
+				.t-icon{
+					background-position: -42px -6px;
+				}
+				.f-icon{
+					background-position: -76px -6px;
+				}
+				.p-icon{
+					background-position: -111px -6px;
+				}
+				.email-icon{
+					background-position: -146px -6px;
+					padding-left: 0px;
+			    padding-top: 3px;
+				}
+			}		
+		}
+	}
+}

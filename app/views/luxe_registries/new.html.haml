@@ -1,0 +1,18 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li.active
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.second-row
+		.input-form
+			= render 'form'
+		%label{:style=>"margin-left: 170px; margin-top: 20px; margin-bottom: 20px;"} Copyright © 2013 Luxe Social Events. Privacy Policy
+
+//= link_to 'Back', luxe_registries_path

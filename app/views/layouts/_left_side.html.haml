@@ -1,0 +1,31 @@
+.row
+	.span3.white-box
+		%p.sub-title LUXE-REGISTRY
+		%ul
+			%li
+				= link_to "CREATE A REGISTRY", new_luxe_registry_path
+			%li
+				= link_to "FIND A REGISTRY", find_registry_path
+			%li
+				= link_to "GIVE BACK", "#"
+			%li
+				= link_to "SCHEDULE YOUR CONSULTATION", schedule_consultation_path
+.row
+	.span3.transparent-box
+		%p.sub-title VIEW BY CATEGORY
+		%ul
+			%li
+				= link_to "All Categories", categories_path
+			- Event.all.each do |e|
+				%li
+					= link_to e.name, categories_path+"?event="+e.id.to_s
+				%li
+
+			%li
+				= link_to "MANAGE YOUR REGISTRY", "#"
+.row
+	.span3.login-box		
+		- if user_signed_in?
+			= link_to 'LOGOUT', signout_path, :method=>'delete'
+		- else
+			= link_to "LOGIN", signin_path

@@ -1,0 +1,43 @@
+.row.luxe-registry-page
+  .row.top-row
+    .top-nav
+      %ul
+        %li.active
+          %a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+        %li
+          %a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+        %li
+          %a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+        %li
+          %a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+  .row.second-row
+    .registry-list
+      %label.page-title My Registries
+      %label The following is a list of your registries.
+      %label Click on a registrant's name or registry number to view.
+      %br/
+      %br/
+      %table.table
+        %thead
+          %tr
+            %th Registry#
+            %th Registrant
+            %th Co-Registrant
+            %th Event
+            %th Event Date
+            %th Actions
+        %tbody.registry-content
+          - @luxe_registries.each do |luxe_registry|
+            %tr
+              %td= luxe_registry.id
+              %td= luxe_registry.registrant_name
+              %td= luxe_registry.co_registrant_name
+              %td= luxe_registry.event
+              %td= luxe_registry.event_date.strftime('%d/%m/%Y')
+              %td
+                = link_to 'Show', luxe_registry, :class=>"btn btn-mini"
+                = link_to 'Edit', edit_luxe_registry_path(luxe_registry), :class=>"btn btn-mini"
+                = link_to 'Destroy', luxe_registry, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class=>"btn btn-mini btn-danger"
+      %br
+      .row.last-row
+        = link_to 'New Registry', new_luxe_registry_path, :class=>"new-registry"

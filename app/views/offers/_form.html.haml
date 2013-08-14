@@ -1,0 +1,53 @@
+= simple_form_for(@offer, :html => {:multipart => true }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .row.input-row
+      = f.input :title, :require=> true
+      = f.input :summary, :label=>"Summary(Hide summeary)", :input_html=>{:style=>"height:100px;width:900px;max-width:900px;min-width:900px;margin-bottom:0px;"}
+      %label.bottom-description{:style=>"margin-top:-10px;"} Leave blank to use trimmed value of full text as summary.
+      = f.input :overview, :label => "Offer Overview", :input_html=>{:style=>"height:100px;width:900px;max-width:900px;min-width:900px"}
+      = f.input :amount, :label => "Offer Amount"
+      = f.input :details, :label => "The Details", :input_html=>{:style=>"height:100px;width:900px;max-width:900px;min-width:900px"}
+      = f.input :location, :label => "Location", :input_html=>{:style=>"height:100px;width:900px;max-width:900px;min-width:900px"}
+      = f.input :merchant, :label => "Our Merchant", :input_html=>{:style=>"height:100px;width:900px;max-width:900px;min-width:900px"}
+    .row.picture-upload
+      %strong 
+        %label IMAGE GALLERY
+      %label Main Home Page Merchant Image
+      %input{:type=>"file", :name=>"offer[images_attributes][0][picture]", :id=>"offer_images_attributes_0_picture"} 
+      %label Purchase Page Photo Slider
+      %input{:type=>"file", :name=>"offer[images_attributes][1][picture]", :id=>"offer_images_attributes_1_picture"}
+    %br/ 
+    .row.category-list
+      %label Category
+      =f.fields_for :offer_events, Event.all, :builder => CustomFormBuilder do |offer_cat|
+        %label.checkbox
+          = offer_cat.check_box :event_id, {:saved_values => [f.object.offer_events, ["id", "name"]]}, offer_cat.object.id, '-1'
+          %label= offer_cat.object.name
+    %br/
+    .row.offer-list    
+      %label Offers
+      %label.checkbox
+        %input{:type=>"checkbox", :value=>"1", :name=>"offers_0", :id=>"offer_offers_0"}
+        %label Members-Only
+      %label.checkbox
+        %input{:type=>"checkbox", :value=>"1", :name=>"offers_1", :id=>"offer_offers_1"}
+        %label Exclusive Offers
+      %label.checkbox
+        %input{:type=>"checkbox", :value=>"1", :name=>"offers_2", :id=>"offer_offers_2"}
+        %label Limited Edition
+  .form-actions
+    = f.button :submit, "Save"
+    - if @offer.id.present? 
+      = link_to "Preview", preview_path+"?id="+@offer.id.to_s, :class=>"btn"
+      = link_to 'Destroy', @offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class=>"btn"
+
+
+:javascript
+  var count = $('.category-list label.checkbox').length
+  var i;
+  for(i=0; i<count; i++){
+    $("#offer_offer_events_attributes_"+i+"_id").remove();
+  }
+

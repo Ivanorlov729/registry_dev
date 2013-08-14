@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @luxe_registry.first_name
+%p
+  %b Last name:
+  = @luxe_registry.last_name
+%p
+  %b Phone:
+  = @luxe_registry.phone
+
+= link_to 'Edit', edit_luxe_registry_path(@luxe_registry)
+\|
+= link_to 'Back', luxe_registries_path

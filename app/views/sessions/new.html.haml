@@ -1,0 +1,35 @@
+.row.login-page
+	.span10{:style=>"margin-left:200px;"}
+		.row.first-row
+			.title
+			%label Register your registry with us and discover	tailor-made products designed by our utra-affluent lifestyle connoiseurs, just for you!
+		.row.second-row
+			.span4.offset3{:style=>"width:400px;"}
+				%p.sub-title Have a Luxesocialevents.com profile?
+				%label Please sign in below, or enter an email address and password to create a profile and start your registry.
+
+				%br/				
+				= simple_form_for(:session, url: sessions_path, :html => {:class => 'form-vertical', :id=>'new_user' }) do |f|
+					.control-group.email.optional.user_email
+						%label.email.optional.control-label{:for => "user_email"} Email
+						.controls
+							%input#user_email.string.email.optional{:autofocus => "autofocus", :name => "session[email]", :size => "50", :type => "email", :value => ""}/
+					.control-group.password.optional.user_password
+						%label.password.optional.control-label{:for => "user_password"} Password
+						.controls
+							%input#user_password.password.optional{:name => "session[password]", :size => "50", :type => "password"}/
+					// = f.button :submit, "Sign in", :class => 'btn-primary'
+					%a{:href => "#"} Register
+					|
+					%a{:href => "javascript://", :onclick=>"login()"} Login
+		.row.last-row
+			.span3{:style=>"padding-top: 16px;"}
+				%a{:href=>"#"}
+					.span1.forgot-password{:style=>"margin-left:0px;"}
+					.span2{:style=>"margin-left: 10px; margin-top: 8px;"} Forgot password?
+			.span4{:style=>"padding-top: 16px; float: right;"}
+				%label{:style=>"padding-top: 8px; color: white;"} Copyright © 2013 Luxe Social Events. Privacy Policy
+:javascript
+	function login(){
+		$("#new_user").submit();
+	}

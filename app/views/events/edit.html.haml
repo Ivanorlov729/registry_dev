@@ -1,0 +1,13 @@
+.row.events-page
+	.row.top-row
+		.top-nav
+			%label Edit Event
+	.row.event-list
+		.event_view
+			.row.first-row
+
+				= render 'form'
+
+				= link_to 'Show', @event
+				\|
+				= link_to 'Back', events_path

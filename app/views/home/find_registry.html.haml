@@ -1,0 +1,26 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li.active
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.find_registry_page
+		.registry_form
+			= form_tag(find_registry_results_path) do
+				.row
+					.span4.offset4
+						%label.page-title Search for a Registry
+						%label To locate a registry, please enter the registrant's name.
+						%br/
+						%label First Name
+						%input{:type=>"text", :name=>"f_name"}
+						%label Last Name
+						%input{:type=>"text", :name=>"l_name"}
+				.row{:style=>"margin-top: 100px;text-align: right;"}
+					%input{:type=>"submit", :value=>"SEARCH", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 80px; margin-right: 80px;"}					

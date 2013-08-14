@@ -1,0 +1,18 @@
+.row.cat-page
+	.row
+		.span1.offset11{:style=>"margin-bottom: 5px;"}
+			%a.lse-link{href: "http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row
+		.span3.left-side-box{:style=>"width:320px;margin-left:0px;"}
+			= render 'layouts/left_side'
+		.span9.main-content-box
+			.row
+				.sapn10
+					- (1..3).each do |i|
+						.row.cat-row
+							.span2
+								= image_tag "test.png"
+							.span2
+								= image_tag "test.png"
+							.span2
+								= image_tag "test.png"

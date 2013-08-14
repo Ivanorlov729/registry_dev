@@ -1,0 +1,95 @@
+= simple_form_for(@luxe_registry) do |f|
+	= f.error_notification
+	.row.first-row
+		%label To create your registry, please enter the following information.
+		%label *Require field
+	.row.second-row
+		%label.sub-title EVENT INFORMATION
+		.form-inputs
+			= f.input :event_id, :label=>"Event", :collection=>Event.all, input_html: { :style=>'width: 310px;' }
+			= f.input :event_date, :label=>"Event"
+	.row.third-row
+		%label.sub-title REGISTRANT INFORMATION
+		.span5{:style=>"margin-left: 0px;"}
+			= f.fields_for :registrant_info do |ri|
+				= ri.input :first_name
+				= ri.input :last_name
+				%br/
+				%br/
+				= ri.input :address1
+				= ri.input :address2
+				= ri.input :city
+				.form-horizontal
+					= ri.input :state
+				= ri.input :zipcode
+				= ri.input :daytime_phone
+				= ri.input :email
+		.span3
+			= f.fields_for :co_registrant_info do |cri|
+				= cri.input :first_name
+				= cri.input :last_name
+				= cri.input :use_regis_addr, :input_html => {value: '1'}, :label=>false
+				%label{:style=>"margin-bottom: 20px;"} Use registrant's address
+				= cri.input :address1
+				= cri.input :address2
+				= cri.input :city
+				.form-horizontal
+					= cri.input :state
+				= cri.input :zipcode
+				= cri.input :daytime_phone
+				= cri.input :email
+	.row.fourth-row
+		%label.sub-title REGISTRANT'S PASSWORD
+		%label Password should be 8-12 characters long.
+		%br/
+		= f.fields_for :registrant do |reg|
+			= reg.input :password
+			= reg.input :password_confirmation
+	.row.fifth-row
+		%label.sub-title SHIPPING PREFERENCES
+		%br/
+		= f.fields_for :registrant do |reg|
+			= reg.input :before_this_date
+			.row.form-horizontal{:style=>"padding:0px;"}
+				.span4.check-box
+					%label Registry Gifts will be sent to:
+					= reg.input :regis_addr1, as: :boolean, :label=>"Registrant's address"
+					= reg.input :co_regis_addr1, as: :boolean, :label=>"Co-Registrant's address"
+				.span4.check-box
+					%label After the date indicated, Registry gifts will be sent to:
+					= reg.input :regis_addr2, :input_html=>{value: '1'}, :label=>"Registrant's address"
+					= reg.input :co_regis_addr2, :input_html=>{value: '1'}, :label=>"Co-Registrant's address"
+			.row.go-green.form-horizontal{:style=>"padding:0px;"}
+				%label{:style=>"margin-top:20px;"} GO GREEN!
+				= reg.input :receive_gifts, :input_html=>{value: '1'}, :label=>"I would like to receive gifts without gift wrap."
+				.span2{:style=>"margin-left: 0;padding-top: 4px;"}
+					%a.what-this{:href=>"#"} What's this?
+				.help-box{:style=>"background-color: white;height: 150px;margin-left: 320px;margin-top: 33px;padding: 5px;position: absolute;width: 300px;display:none;z-index:10;"}
+					.triangle
+					%label The Registry at Luxe Social Events supports a culture of environmental responsibility. Let your guests know you prefer your gifts unwrapped. Your choice will help reduce waste globally; it will save your guests money on wrapping paper and you'll have less to clean up after opening all those gifts.
+	.row.sixth-row
+		.form-inputs
+			%label.sub-title ALTERNATIVE ADDRESS
+			%label If registrants are unavailable, contact the following person:
+			= f.input :first_name
+			= f.input :last_name
+			= f.input :phone, :label => "Daytime Phone"
+	.row.seventh-row
+		.row{:style=>"padding:0px;"}
+			%label Registry Email Subscription
+			.checkbox
+				%label{:style=>"margin-left: 14px;"}
+					%input{:type=>"checkbox"} Receive information about online events related to your registry.
+		.row{:style=>"padding:0px; text-align:right;"}
+			= f.button :submit, "SUBMIT"
+:javascript
+	$(function(){	
+		$("a.what-this").hover(
+			function(){
+				$("div.help-box").show();
+			},
+			function(){
+				$("div.help-box").hide();
+			}
+		);
+	})
