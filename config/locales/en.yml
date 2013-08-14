@@ -1,5 +1,39 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  controllers:
+    application:
+      require_user:
+        notice:       "You must be logged in to access this page."
+      require_no_user:
+        notice:       "You must be logged out to access this page."
+    payment_process:
+      show:
+        select:
+          missing:    'You must select at least one submission to place an order.'
+      complete:
+        notice:       "Thank you for your submission."
+      update:
+        success:      'Thank you for your submission. You will receive a confirmation email shortly.'
+        card_error:   'Credit Card could not be processed: %{msg}.'
+    submission_step:
+      draft:
+        notice:       'Your submission was saved as a draft.'
+      complete:
+        notice:       'Thank you for your submission.'
+    submissions:
+      create:
+        notice:       'Submission was successfully created.'
+      update:
+        notice:       'Submission was successfully updated.'
+    user_sessions:
+      create:
+        notice:       'Login successful!'
+        error:        'Sorry, but you could not be logged in. Please try again.'
+      destroy:
+        notice:       'Logout successful!'
+    users:
+      create:
+        notice:       'Registration was successfully completed.'
+        error:        'Sorry, but your registration could not be completed. Please try again.'
+      update:
+        notice:       'User was successfully updated.'
+        error:        'Sorry, but your account could not be updated. Please try again.'
