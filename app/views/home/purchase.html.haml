@@ -11,10 +11,10 @@
 				%li
 					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
 	.row.results-page
-		.results-content.purchase-preview{:style=>"background-color: white;border: medium none;padding-left: 0;padding-right: 0;padding-top: 0;width: 980px;"}
+		.results-content.purchase-preview{:style=>"background-color: transparent;border: medium none;padding-left: 0;padding-right: 0;padding-top: 0;width: 980px;"}
 			.row.first-row
 				.span6.img-box
-					= image_tag @offer.merchant_image
+					= image_tag @offer.merchant_image, :style=>"height: 435px; width: 570px;"
 				.span4.purchase-box
 					.row
 						%label.offer-title Bridal Clouture
@@ -22,8 +22,9 @@
 						.price-box
 							%label.price= @offer.price
 							%label.offer-option Offer
-					.row
+					.row{:style=>"text-align:center"}
 						%a.btn.btn-purchase.custom-btn{:href=>"#"} PURCHASE
+						%br/
 						%br/
 						%a.btn.btn-registry.custom-btn{:href=>"#"} ADD TO REGISTRY
 					.row
@@ -42,4 +43,31 @@
 						.span1
 							%a{:href=>"#"}
 								.stripe-png.email-icon
-
+			.row.second-row
+				.row
+					%ul.second-navigation
+						%li.active
+							Members - Only
+							= @offer.price
+						%li
+							Exclusive Offer 
+							= @offer.price
+						%li
+							Limited Edition
+							= @offer.price
+				.row.row-box.overview-box
+					%label.sub-title OVERVIEW
+					%label= @offer.overview
+				.row.row-box.details-box
+					%label.sub-title THE DETAILS
+					%label= @offer.details
+				.row.row-box.location-box
+					%label.sub-title LOCATION
+					%label= @offer.details
+				.row.row-box.ourmerchant-box
+					.span6{:style=>"margin-left: 0px;"}
+						%label.sub-title OUR MERCHANT
+						%label= @offer.details
+					.span3{:style=>"float: right; width: 262px; margin-left: 0px;"}
+						= image_tag @offer.slider_image
+				

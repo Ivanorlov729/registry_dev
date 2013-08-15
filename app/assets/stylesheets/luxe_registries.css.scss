@@ -303,6 +303,7 @@
 	}
 	.purchase-preview{
 		.first-row{
+			background-color: white;
 			.img-box{
 				margin-left: 0px;
 				img{
@@ -310,8 +311,14 @@
 					height: 383px;
 				}
 			}
-			.purchase-box{
+			.purchase-box{				
 				margin-top: 30px;
+				.row{
+					margin-bottom: 10px;
+					.btn-purchase{
+
+					}
+				}
 				.offer-title{
 					font-size:26px;
 				}
@@ -338,6 +345,10 @@
 				height: 32px;
     		padding-top: 16px;
 				font-size: 20px;
+				background-color: rgb(220, 226, 225);
+		    background-image: none;
+		    border-radius: 0 0 0 0;
+		    height: 32px;
 			}
 		}
 
@@ -372,6 +383,49 @@
 			    padding-top: 3px;
 				}
 			}		
+		}
+		.second-row{
+			margin-top: 20px;
+			.row-box{
+				padding-left: 50px;
+				padding-top: 25px;
+				padding-bottom: 30px;
+				padding-right: 150px;
+				.sub-title{
+					font-size: 20px;
+    			font-weight: 600;
+				}
+			}
+			.second-navigation{
+				margin-left: 0px;
+				float: left;
+				margin-bottom: 0px;
+				li{
+					float: left;
+					list-style: none;
+					border-radius: 5px;
+					background-color: #414143;
+					color: white;
+			    font-size: 20px;
+			    height: 20px;
+			    margin-right: 10px;
+			    padding: 10px 8px;
+				}
+				.active{
+					background-color: white;
+					border-radius: 0px;
+					color: black;
+				}
+			}
+			.overview-box{
+				background-color: white;
+			}
+			.location-box{
+				background-color: white;	
+			}
+			.ourmerchant-box{
+				padding-right: 0px;
+			}
 		}
 	}
 }

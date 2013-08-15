@@ -15,8 +15,13 @@ class HomeController < ApplicationController
   end
   
   def categories
-    event = Event.find_by_id params[:event]
-    @registries = event.luxe_registries
+    @registries = []
+    if params[:event].nil?
+      @registries = LuxeRegistry.all
+    else
+      event = Event.find_by_id params[:event]
+      @registries = event.luxe_registries if event
+    end
   end
 
   def registry_view

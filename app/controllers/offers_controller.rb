@@ -1,5 +1,5 @@
 class OffersController < InheritedResources::Base
-	
+	before_filter :require_user
 	def new
 		@offer = Offer.new
 		@offer.images.build
