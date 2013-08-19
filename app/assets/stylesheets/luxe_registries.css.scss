@@ -428,4 +428,34 @@
 			}
 		}
 	}
+
+	.new-payment-page{
+		.registry_form{
+			border: 1px solid #aaa;
+	    margin: auto;
+	    padding: 30px 50px;
+	    margin-bottom: 50px;
+	    width: 900px;
+	    input[type="text"]{
+	    	width: 250px;
+	    	height: 28px;
+	    }			
+	    select{
+	    	height: 36px;
+		    padding-bottom: 5px;
+		    padding-top: 7px;
+		    width: 120px;
+	    }
+			label.page-title{
+				font-size: 30px;
+		    margin-bottom: 20px;
+		    margin-top: 10px;
+			}
+			.first-row{
+				border-bottom: solid 1px #aaa;
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+			}			
+		}	
+	}
 }

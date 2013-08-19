@@ -1,0 +1,161 @@
+.manage-registry{
+	background-color: #fff;
+	label.page-title{
+		font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+	}
+	.top-row{
+		background-color: rgb(217, 227, 225);
+    margin-top: 0;
+    height: 40px;
+		.top-nav{
+			width: 970px;
+			margin: auto;
+			ul{
+				li{
+					list-style: none;
+					float: left;
+					margin-right:30px;
+					width: 30%;
+					a{
+						color: black;
+						&:hover{
+							color: black;
+							text-decoration: none;
+						}
+					}
+				}
+				li.active{
+					a{
+						font-size:24px;
+						font-weight: 300;
+					}
+				}
+			}
+		}		
+	}
+	.bottom-line{
+		border-top: solid 2px #d3dfdd;
+		border-bottom: solid 1px #d3dfdd;
+		margin-top: 40px;
+		margin-bottom: 10px;
+		height: 3px;
+	}
+	.page-content{
+		width: 990px;
+		margin: auto;
+		padding: 10px 20px;
+		.first-row{
+			margin-left: 150px !important;
+			.manage-top-nav{
+				margin: auto;
+				li{
+					list-style: none;
+					float: left;
+					background-color: rgb(217, 227, 225);
+	    		padding: 10px 30px;
+	    		margin-left: 10px;
+	    		a{
+
+	    			&:hover{
+	    				text-decoration: none;
+	    			}
+	    		}
+				}
+				.select{
+					background-color: #f7f8f8;
+				}
+			}
+		}
+		.second-row{
+			margin-left: 130px !important;
+			margin-top: 40px;
+			table{
+				width: 90%;
+				color: #333;
+				font-size: 16px;
+				thead{				
+					tr{
+						border-bottom: solid 3px #dadada;
+						th{
+							text-align: left;
+							padding-bottom: 8px;
+						}						
+					}
+				}
+				tbody{
+					tr{
+						td{
+							padding-top: 10px;
+							pddding-bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.account-settings-page{
+		.second-row{
+			.account-page-content{
+				.sub-page-title{
+					font-size: 20px;
+					font-weight: 600;
+				}
+				width: 580px;
+				.span2{
+					margin-left: 0px;
+				}
+				.row{
+					padding: 8px 0;
+				}
+				.form-horizontal{
+					.control-group{
+						.control-label{
+							width: 100px;
+							text-align: left;
+						}
+						.controls{
+							margin-left: 110px;
+							input{
+								width: 280px;
+							}
+							button{
+
+							}
+						}
+					}
+				}
+			}
+			.customer-service-box{
+				border: solid 1px #bccecb;
+				width: 218px;
+				.row{
+					margin-left: 16px;					
+					.title{
+						color: #c98234;
+						font-size: 16px;
+						font-weight: 600;
+					}
+				}
+				.title-bar{
+					background-color: #727272;
+					padding: 10px 0;
+					margin-left: 0px;
+					border: solid 1px #bccecb;
+					label{
+						color: #eee;
+						text-align: center;
+						font-size: 16px;
+						font-weight: 600;
+						margin-bottom: 0px;
+					}
+				}
+				
+			}
+		}
+	}
+	.subscriptions-page{
+		
+	}
+}

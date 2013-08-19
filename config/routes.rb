@@ -12,10 +12,16 @@ Registry::Application.routes.draw do
   get 'categories' => 'home#categories'
   get 'registry_view' => 'home#registry_view'
   get 'preview' => 'home#purchase'
-  
+
+  get 'manage_registry' => 'home#manage_registry'
+  get 'subscriptions' => 'home#subscriptions'
+  match 'account_settings' => 'home#account_settings'
+
+  match 'new_payment' => 'home#new_payment'
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin', 	to: 'sessions#new', 		via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+
 
 end
 

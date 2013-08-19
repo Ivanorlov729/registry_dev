@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814140721) do
+ActiveRecord::Schema.define(:version => 20130819054740) do
 
   create_table "actions", :primary_key => "aid", :force => true do |t|
     t.string "type",       :limit => 32,         :default => "",  :null => false
@@ -2621,7 +2621,8 @@ ActiveRecord::Schema.define(:version => 20130814140721) do
     t.string   "security_code"
     t.string   "telephone"
     t.string   "email"
-    t.string   "means_contact"
+    t.string   "means_contact_telephone"
+    t.string   "means_contact_email"
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
@@ -2629,8 +2630,8 @@ ActiveRecord::Schema.define(:version => 20130814140721) do
     t.string   "zip_code"
     t.string   "price"
     t.string   "transaction_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "payments", ["order_id"], :name => "index_payments_on_order_id"
@@ -2871,6 +2872,17 @@ ActiveRecord::Schema.define(:version => 20130814140721) do
 
   add_index "url_alias", ["alias", "language", "pid"], :name => "alias_language_pid"
   add_index "url_alias", ["source", "language", "pid"], :name => "source_language_pid"
+
+  create_table "user_details", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "zip_code"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "user_details", ["user_id"], :name => "index_user_details_on_user_id"
 
   create_table "users", :primary_key => "uid", :force => true do |t|
     t.string  "name",             :limit => 60,         :default => "", :null => false

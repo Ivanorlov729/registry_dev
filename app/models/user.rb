@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :orders
   has_many :payments
+  has_one :user_detail
   
   def authenticate password
   	cur_pass = self.pass
@@ -63,20 +64,18 @@ class User < ActiveRecord::Base
       count = count - 1
     end while (count > 0)
 
-    p '>>>>>>>>>>>>>>>>>'
-    p hash
-
     len = hash.length
     output =  setting + _password_base64_encode(hash, len)
-    
+
     len = (8 * len) / 6
+
     expected = 12 + len.to_i
 
     return (output.length == expected) ? output[0, DRUPAL_HASH_LENGTH] : false
   end
 
 
-  def _password_base64_encode(input, count)
+  def _password_base64_encode(input, count)    
     output = ''
     i = 0
     itoa64 = self._password_itoa64
@@ -91,25 +90,21 @@ class User < ActiveRecord::Base
       
       i=i+1
       if i >= count
-        puts('f='+i.to_s)
         break
       end
-      
-
+            
       if i < count 
         value |= input[i].ord << 16
       end
       output += itoa64[(value >> 12) & 0x3f]
 
-      i=i+1
+      i=i+1      
       if i >= count
-        puts('s='+i.to_s)
         break
       end
       
       output += itoa64[(value >> 18) & 0x3f]
      end while (i < count)
-
     return output
   end
 

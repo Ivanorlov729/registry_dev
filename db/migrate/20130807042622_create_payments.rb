@@ -10,7 +10,8 @@ class CreatePayments < ActiveRecord::Migration
       t.string :security_code
       t.string :telephone
       t.string :email
-      t.string :means_contact
+      t.string :means_contact_telephone
+      t.string :means_contact_email
       t.string :address1
       t.string :address2
       t.string :city
