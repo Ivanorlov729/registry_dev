@@ -1,0 +1,45 @@
+.row.manage-registry
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>"#"} 
+						Welcome, 
+						= current_user.name
+				%li
+					= link_to 'Luxe-Registry', luxe_registries_path
+				%li
+					= link_to 'Logout', signout_path, :method=>'delete'
+	.row.bottom-line
+	.row.purchase-page
+		.page-content
+			.row.first-row
+				= render "/layouts/manage_registry_top_nav"
+			.row.second-row
+				%table
+					%thead
+						%tr
+							%th Order number
+							%th Product Name
+							%th Business Name
+							%th Total
+							%th Order Status
+					%tbody
+						%tr
+							%td 45
+							%td Business Card Holder
+							%td Tiffany & Co
+							%td $77.99
+							%td Pending
+						%tr
+							%td 36
+							%td Business Card Holder
+							%td Tiffany & Co
+							%td $77.99
+							%td Pending
+						%tr
+							%td 24
+							%td Business Card Holder
+							%td Tiffany & Co
+							%td $77.99
+							%td Pending

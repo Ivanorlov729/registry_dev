@@ -27,7 +27,7 @@
             %td= offer.details
             %td= offer.location
             %td= offer.merchant
-            %td= link_to "Preview", preview_path+"?id="+offer.id.to_s, :class => 'btn btn-mini'
+            %td= link_to "Preview", "/preview/"+offer.id.to_s, :class => 'btn btn-mini'
             %td= link_to 'Edit', edit_offer_path(offer), :class => 'btn btn-mini'
             %td= link_to 'Destroy', offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class=>"btn btn-mini btn-danger"
 

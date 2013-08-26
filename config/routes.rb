@@ -10,14 +10,16 @@ Registry::Application.routes.draw do
   match 'find_registry_results' =>'home#find_registry_results'
   get 'schedule_consultation' => 'home#schedule_consultation'
   get 'categories' => 'home#categories'
-  get 'registry_view' => 'home#registry_view'
-  get 'preview' => 'home#purchase'
 
-  get 'manage_registry' => 'home#manage_registry'
-  get 'subscriptions' => 'home#subscriptions'
-  match 'account_settings' => 'home#account_settings'
 
-  match 'new_payment' => 'home#new_payment'
+  get 'registry_view' => 'registry#registry_view'
+  get 'preview/:id' => 'registry#purchase'
+  get 'manage_registry' => 'registry#manage_registry'
+  get '/registry_list'  => 'registry#registry_list'
+  get 'subscriptions' => 'registry#subscriptions'
+  match '/account_settings' => 'registry#account_settings'
+  match '/new_payment' => 'registry#new_payment'
+
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin', 	to: 'sessions#new', 		via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'

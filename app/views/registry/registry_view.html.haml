@@ -1,0 +1,76 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li.active
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.registry_view_page
+		.registry_view
+			.row.first-row
+				.span6{:style=>"margin-left:0px;"}
+					%label.page-title Iris Median & Terrance Elston
+					%label
+						Registry #:
+						= @registry.id
+					%label
+						Event Date:
+						= @registry.event_date.strftime("%B %d, %Y")
+					%label The Registrants have chosen to go green. Please send presents without gift wrap.
+				.span3
+					.row
+						.span1.email-icon
+						.span2 
+							%a{:href=>"#"} Email Registry
+					.row{:style=>"margin-top:5px;"}
+						.span1.print-icon
+						.span2 
+							%a{:href=>"#"} Print Registry
+
+				%br/
+				%br/
+			.row.second-row
+				%table.table.table-hover
+					%thead
+						%tr
+							%th Item Requested
+							%th Description
+							%th Price
+							%th Requested
+							%th Still Need
+							%th Quantity
+					%tbody
+						%tr
+							%td 
+								.icon
+							%td Gold Tiffany Plate Set
+							%td $190.00
+							%td 1
+							%td 1
+							%td 
+								.quantity
+						%tr
+							%td 
+								.icon
+							%td Gold Tiffany Plate Set
+							%td $190.00
+							%td 1
+							%td 1
+							%td 
+								.quantity
+						%tr
+							%td 
+								.icon
+							%td Gold Tiffany Plate Set
+							%td $190.00
+							%td 1
+							%td 1
+							%td 
+								.quantity
+			.row.third-row
+				%button.btn-purchase PURCHASE

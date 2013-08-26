@@ -25,7 +25,8 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'heroku_external_db'
 gem 'mysql2'
-
+gem 'slimbox2-rails'
+gem 'facebox-rails'
 gem 'bcrypt-ruby'
 
 gem 'activeadmin'

@@ -1,0 +1,110 @@
+.row.luxe-registry-page
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+				%li
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
+				%li
+					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	.row.new-payment-page
+		.registry_form
+			%label.page-title Payment Method
+			%label Please fill in the information below to add a new credit card.
+			%label For questions regarding privacy protection, please see our Privacy Policy.
+			= form_for @payment, :url=>"/new_payment", html: {:class=>"form-inline", :id=>"account_setting_form"} do |f|
+				.row
+					.span4
+						.control-group
+							%label.control-label{:for => "payment_first_name"} First Name*
+							.controls
+								= f.text_field :first_name, placeholder: "first name"
+						.control-group
+							%label.control-label{:for => "payment_last_name"} Last Name*
+							.controls
+								= f.text_field :last_name, placeholder: "last name"
+						.control-group
+							%label.control-label{:for => "payment_card_number"} Card Number*
+							.controls
+								= f.text_field :card_number, placeholder: "card number"
+						.control-group
+							%label.control-label{:for => "payment_exp_date"} Expiration date*
+							.controls
+								= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}
+								= select_year nil, {start_year: Date.today.year+1, end_year: Date.today.year+15}, {name: nil, id: "card_year"}
+								= f.hidden_field :exp_date
+						.control-group
+							%label.control-label{:for => "payment_security_code"} Security Code*
+							.controls
+								= f.text_field :security_code, placeholder: "security code"
+						.control-group
+							%label.control-label{:for => "payment_telephone"} Telephone*
+							.controls
+								= f.text_field :telephone
+						.control-group
+							%label.control-label{:for => "payment_email"} Email*
+							.controls
+								= f.text_field :email, placeholder: "email"
+						
+					.span4
+						%label Billing Address
+						.control-group
+							%label.control-label{:for => "payment_address1"} Address1*
+							.controls
+								= f.text_field :address1, placeholder: "address1"
+						.control-group
+							%label.control-label{:for => "payment_address2"} Address2
+							.controls
+								= f.text_field :address2, placeholder: "address2"
+						.control-group
+							%label.control-label{:for => "payment_city"} City*
+							.controls
+								= f.text_field :city, placeholder: "city"
+						.control-group
+							%label.control-label{:for => "payment_state"} State*
+							.controls
+								= f.text_field :state, placeholder: "state"
+						.control-group
+							%label.control-label{:for => "payment_zip_code"} Zip Code*
+							.controls
+								= f.text_field :zip_code, placeholder: "zip_code"
+				.row
+					.span4
+						.row
+							%label Preferred Means of Contact:
+						.row
+							.span2{:style=>"margin-left: 0px;width: 130px;"}
+								%label.checkbox									
+									= f.check_box :means_contact_telephone 
+									Telephone
+							.span2{:style=>"margin-left: 0px;"}
+								%label.checkbox
+									= f.check_box :means_contact_email
+									Email
+
+					.span4
+						=f.submit "SAVE & CONTINUE", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 8px 40px; margin-right: 80px; width: 200px; float: right;"
+						
+
+:javascript
+	var year = $("#card_year").val();
+	var month = $("#card_month").val();
+	$("#payment_exp_date").val(year+"/"+month+"/1");
+	$("#card_month").change(function(){
+		month = $(this).val();
+		$("#payment_exp_date").val(year+"/"+month+"/1");
+	});
+	$("#card_year").change(function(){
+		year = $(this).val();
+		$("#payment_exp_date").val(year+"/"+month+"/1");
+	});
+	
+	$("#means_contact_telephone").change(function(){
+		#("#payment_means_contact").val("0");
+	});
+	$("#means_contact_email").change(function(){
+		#("#payment_means_contact").val("1");
+	});

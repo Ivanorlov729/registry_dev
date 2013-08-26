@@ -1,0 +1,102 @@
+.row.manage-registry
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>"#"} 
+						Welcome, 
+						= current_user.name
+				%li
+					= link_to 'Luxe-Registry', luxe_registries_path
+				%li
+					= link_to 'Logout', signout_path, :method=>'delete'
+	.row.bottom-line
+	.row.account-settings-page
+		.page-content
+			.row.first-row
+				= render "/layouts/manage_registry_top_nav"
+			.row.second-row
+				.span7.account-page-content
+					.row
+						%label.sub-page-title PERSONAL INFORMATION
+					.row				
+						.span2
+							%label Email
+						.span2
+							= current_user.mail
+						.span2{:style=>"width: 130px;"}
+							= link_to "Change Email", "#"
+					.row
+						.span2
+							%label Password
+						.span2
+							**********
+					.row
+						.span2
+							%label L.S.E. Member Rewards
+						.span2
+							= link_to "Earned Points", "#"
+					.row
+						.span2
+							%label Payment Methods
+						.span2
+							= link_to "Add New", new_payment_path
+					.row
+						= form_for @user_detail, :url=>'/account_settings', html: {:class=>"form-horizontal", :id=>"account_setting_form"}, :remote=>true do |f|
+							.control-group
+								%label.control-label{:for => "inputEmail"} First Name
+								.controls
+									= f.text_field :first_name, placeholder: "first name"
+							.control-group
+								%label.control-label{:for => "inputPassword"} Last Name
+								.controls
+									= f.text_field :last_name, placeholder: "last name"
+							.control-group
+								%label.control-label{:for => "inputPassword"} Zip Code
+								.controls
+									= f.text_field :zip_code, placeholder: "zip code"
+							.control-group
+								.controls
+									%input{:type=>"submit", :value=>"SUBMIT", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 8px 40px; margin-right: 80px; width: 200px;"}
+				.span3.customer-service-box
+					.row.title-bar
+						%label CUSTOMER SERVICE
+					.row{:style=>"margin-top: 24px;"}
+						%label.title EMAIL
+						%label support@luxesocialevents.com
+					.row{:style=>"margin-top: 30px;"}
+						%label.title CALL US
+						%label 510.233.3522(local)
+					.row
+						%label Business Hours
+						%br/
+						%label Monday-Riday
+						%label 7am-6pm PST
+						%br/
+						%label Saturday
+						%label 7am-12pm PST
+:javascript 
+	$("#account_setting_form").submit(function(){
+		var url = '/account_settings';
+		var f_name = $("#user_detail_first_name").val();
+		var l_name = $("#user_detail_last_name").val();
+		var z_code = $("#user_detail_zip_code").val();
+		$.ajax({
+			url :url,
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+			},
+			type: "POST",
+			data: 'f_name='+f_name+'&l_name='+l_name+'&z_code='+z_code,
+			dataType:'script',
+			success :function(data){
+				state = "true";
+				console.log("done");
+			},
+			error :function(data){
+				console.log("fail");
+			}
+		});		
+		return false;
+	});
+	

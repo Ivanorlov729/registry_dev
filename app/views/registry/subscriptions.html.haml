@@ -1,0 +1,21 @@
+.row.manage-registry
+	.row.top-row
+		.top-nav
+			%ul
+				%li
+					%a{:href=>"#"} 
+						Welcome, 
+						= current_user.name
+				%li
+					= link_to 'Luxe-Registry', luxe_registries_path
+				%li
+					= link_to 'Logout', signout_path, :method=>'delete'
+	.row.bottom-line
+	.row.subscriptions-page
+		.page-content
+			.row.first-row
+				= render "/layouts/manage_registry_top_nav"
+			.row.second-row
+				.row
+					%label.sub-page-title MY SUBSCRIPTIONS (I am currently subscribed to:)
+				.row

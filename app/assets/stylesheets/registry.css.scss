@@ -1,0 +1,21 @@
+// Place all the styles related to the registry controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#facebox{
+	width: 500px;
+	.popup{
+		width: 500px;
+		.content{
+			margin-left: 0px;
+			#main{
+				width: 480px;
+				.container{
+					width: 500px;
+					.content{
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+	}
+}
