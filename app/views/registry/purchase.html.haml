@@ -26,7 +26,10 @@
 						%a.btn.btn-purchase.custom-btn{:href=>"#"} PURCHASE
 						%br/
 						%br/
-						%a.btn.btn-registry.custom-btn{:href => "/registry_list", :rel => "facebox"} ADD TO REGISTRY
+						- if @offer.luxe_registry.present? and current_user.luxe_registries.include? @offer.luxe_registry
+							%br/
+						- else
+							%a.btn.btn-registry.custom-btn{:href => "/registry_list/"+@offer.id.to_s, :rel => "facebox"} ADD TO REGISTRY
 					.row
 						%label Come join us and experience true luxury
 						%label Come join us and experience true luxury

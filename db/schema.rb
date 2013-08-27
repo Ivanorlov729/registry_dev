@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130819054740) do
+ActiveRecord::Schema.define(:version => 20130827020659) do
 
   create_table "actions", :primary_key => "aid", :force => true do |t|
     t.string "type",       :limit => 32,         :default => "",  :null => false
@@ -2522,8 +2522,9 @@ ActiveRecord::Schema.define(:version => 20130819054740) do
     t.text     "details"
     t.text     "location"
     t.text     "merchant"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "luxe_registry_id"
   end
 
   add_index "offers", ["event_id"], :name => "index_offers_on_event_id"
@@ -2808,6 +2809,16 @@ ActiveRecord::Schema.define(:version => 20130819054740) do
   end
 
   add_index "shortcut_set_users", ["set_name"], :name => "set_name"
+
+  create_table "subscriptions", :force => true do |t|
+    t.integer  "luxe_registry_id"
+    t.integer  "user_id"
+    t.boolean  "subscribe"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "subscriptions", ["luxe_registry_id"], :name => "index_subscriptions_on_luxe_registry_id"
 
   create_table "system", :primary_key => "filename", :force => true do |t|
     t.string  "name",                         :default => "", :null => false

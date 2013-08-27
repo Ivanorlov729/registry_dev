@@ -4,6 +4,8 @@ class Offer < ActiveRecord::Base
 
   validates :title, :presence => true
 
+  belongs_to :luxe_registry
+
   has_many :images, :as => :imageable, :dependent => :destroy
 	
 	has_many :offer_events

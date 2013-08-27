@@ -32,7 +32,7 @@
               %td= luxe_registry.id
               %td= luxe_registry.registrant_name
               %td= luxe_registry.co_registrant_name
-              %td= luxe_registry.event
+              %td= luxe_registry.event.name
               %td= luxe_registry.event_date.strftime('%d/%m/%Y')
               %td
                 = link_to 'Show', luxe_registry, :class=>"btn btn-mini"

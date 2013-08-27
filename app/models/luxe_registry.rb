@@ -8,6 +8,10 @@ class LuxeRegistry < ActiveRecord::Base
   has_one :registrant, 					:dependent => :destroy
   has_one :registrant_info,			:dependent => :destroy
   has_one :co_registrant_info,	:dependent => :destroy
+  
+  has_one :subscription
+
+  has_many :offers
 
   accepts_nested_attributes_for :registrant, 					:allow_destroy=>true, :reject_if => :all_blank
   accepts_nested_attributes_for :registrant_info, 		:allow_destroy=>true, :reject_if => :all_blank
@@ -22,4 +26,7 @@ class LuxeRegistry < ActiveRecord::Base
   	[self.co_registrant_info.first_name, self.co_registrant_info.last_name].reject(&:blank?).join(" ")
   end
   
+  def event_name
+    self.event.name
+  end
 end

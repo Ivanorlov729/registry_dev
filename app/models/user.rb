@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :orders
   has_many :payments
+  has_many :subscriptions
   has_one :user_detail
   
   def authenticate password

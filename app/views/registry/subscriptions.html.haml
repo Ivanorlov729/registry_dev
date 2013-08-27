@@ -17,5 +17,23 @@
 				= render "/layouts/manage_registry_top_nav"
 			.row.second-row
 				.row
-					%label.sub-page-title MY SUBSCRIPTIONS (I am currently subscribed to:)
+					%span{:style=>"font-size:16px; font-weight:600;"}MY SUBSCRIPTIONS 
+					%span (I am currently subscribed to:)
 				.row
+					= form_for :subscription, :url=>"/update_subscription" do |f|
+						.row
+							= f.collection_check_boxes :luxe_registry_ids, LuxeRegistry.all, :id, :event_name							
+							%span
+								= check_box_tag "subscription[all_registry]", 'yes', 1
+								%label{:for=>"subscription_all_registry"} All Registries
+						.row
+							%label{:style=>"font-size:16px; font-weight:600;"} KEEP UP WITH LUXE-REGISTRY
+							.span4
+								%label news & updates	
+							.span4
+								%label surveys
+						.row
+							%label{:style=>"font-size:16px; font-weight:600;"} UNSUBSCRIBE
+							%label Unsubscribe from all Luxe-Registry emails
+						
+						= f.submit "UPDATE", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 80px; margin-right: 80px;"

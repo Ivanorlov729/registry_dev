@@ -1,3 +1,31 @@
-.row.registry-list{:style=>"width: 400px; margin-left: 0px;"}
-	-@registries.each do |registry|
-		%label= registry.event.name
+:css
+	.registry-list	input, label{
+		float: left;
+		margin-left: 5px;	
+	}
+	.registry-list span{
+		display: inline-block;
+		float: left;
+		width: 100%;
+	}
+	.registry-list .title-row{
+		background-color: rgb(218, 218, 218);
+		border-radius: 5px 5px 0 0;
+		height: 40px;
+		margin-left: -20px;
+		margin-top: -20px;
+		width: 500px;
+	}
+	.registry-list .title{
+		font-size: 24px;
+		font-weight: 600;
+		padding: 10px 40px;
+	}
+.row.registry-list{:style=>"width: 470px; margin-left: 0px;"}	
+	.row.title-row{:style=>"margin-left: -20px;"}
+		%label.title Select Registry
+	.row.registries
+		= form_for :registry, :url=>"/add_registry" do |f|
+			= hidden_field_tag "registry[offer_id]", @offer.id
+			= f.collection_radio_buttons :luxe_registry_id, @registries, :id, :registrant_name
+			= f.submit, :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 80px; margin-right: 80px;"
