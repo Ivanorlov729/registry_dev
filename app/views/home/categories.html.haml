@@ -9,9 +9,10 @@
 			.row
 				.sapn10
 					.row.cat-row
-						- @registries.each do |registry|						
-							.span2
-								= link_to(image_tag("test.png"), registry_view_path+"?id="+registry.id.to_s)
+						- @registries.each do |registry|
+							- registry.offers.each do |product|														
+								.span2
+									= link_to(image_tag(product.images.first.picture), "/purchase/"+product.id.to_s)
 					
 					/- (1..3).each do |i|
 					/	.row.cat-row
