@@ -28,4 +28,4 @@
 		= form_for :registry, :url=>"/add_registry" do |f|
 			= hidden_field_tag "registry[offer_id]", @offer.id
 			= f.collection_radio_buttons :luxe_registry_id, @registries, :id, :registrant_name
-			= f.submit, :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 80px; margin-right: 80px;"
+			= f.submit "Add", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 80px; margin-right: 80px;"
