@@ -6,6 +6,7 @@ class RegistryController < ApplicationController
   end
 
   def purchase
+    session[:current_offer] = params[:id]
     @offer = Offer.find_by_id params[:id]
   end
 

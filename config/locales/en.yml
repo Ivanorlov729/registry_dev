@@ -36,4 +36,4 @@ en:
         error:        'Sorry, but your registration could not be completed. Please try again.'
       update:
         notice:       'User was successfully updated.'
-        error:        'Sorry, but your account could not be updated. Please try again.'
+        error:        'Sorry, but your account could not be updated. Please try again.'        

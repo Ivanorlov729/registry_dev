@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130827020659) do
+ActiveRecord::Schema.define(:version => 20130901090031) do
 
   create_table "actions", :primary_key => "aid", :force => true do |t|
     t.string "type",       :limit => 32,         :default => "",  :null => false
@@ -2543,8 +2543,12 @@ ActiveRecord::Schema.define(:version => 20130827020659) do
     t.string   "method"
     t.string   "email"
     t.string   "token_key"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "optional_address"
+    t.string   "tel_number"
+    t.string   "is_telephone",     :limit => 25
+    t.string   "is_email",         :limit => 25
   end
 
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
@@ -2617,22 +2621,19 @@ ActiveRecord::Schema.define(:version => 20130827020659) do
     t.integer  "order_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "card_number"
-    t.date     "exp_date"
-    t.string   "security_code"
-    t.string   "telephone"
+    t.string   "ccard_last4"
+    t.string   "exp_year"
+    t.string   "exp_month"
     t.string   "email"
-    t.string   "means_contact_telephone"
-    t.string   "means_contact_email"
-    t.string   "address1"
-    t.string   "address2"
+    t.string   "address"
+    t.string   "optional_address"
     t.string   "city"
     t.string   "state"
     t.string   "zip_code"
     t.string   "price"
     t.string   "transaction_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "payments", ["order_id"], :name => "index_payments_on_order_id"

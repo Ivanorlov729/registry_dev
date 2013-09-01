@@ -5,8 +5,8 @@
 	background-color: #eaeaea;
 	label.page-title{
 		font-size: 30px;
-    margin-bottom: 20px;
-    margin-top: 10px;
+		margin-bottom: 20px;
+		margin-top: 10px;
 	}
 		
 	.top-row{
@@ -50,11 +50,11 @@
 					font-weight:300;
 					color: black;
 					background-color: rgb(217, 227, 225);
-			    padding: 6px 30px;
-			    width: 120px;
-			    &:hover{
-			    	text-decoration: none;			    	
-			    }
+					padding: 6px 30px;
+					width: 120px;
+					&:hover{
+						text-decoration: none;						
+					}
 				}				
 			}
 		}
@@ -66,14 +66,14 @@
 			select{
 				border-radius: 12px;
 				height: 36px;
-    		padding-bottom: 6px;
-    		padding-top: 8px;
-    		width: 100px;
+				padding-bottom: 6px;
+				padding-top: 8px;
+				width: 100px;
 			}
 			label.sub-title{
 				font-size: 16px;
-		    margin-bottom: 20px;
-		    margin-top: 10px;
+				margin-bottom: 20px;
+				margin-top: 10px;
 			}
 			.row{
 				padding: 10px 20px;
@@ -131,7 +131,7 @@
 						}
 						input[type="checkbox"]{
 							margin-left: -222px;
-    					margin-top: 8px;
+							margin-top: 8px;
 						}
 					}
 				}
@@ -139,23 +139,23 @@
 					margin-left: 0px;
 					.triangle{
 						background-color: white;
-    				box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.28);
-		        content: "";
-		        display: inline-block;
-		        height: 20px;
-		        margin-left: 30px;
-		        position: absolute;
-		        transform: rotate(56deg) skew(0deg, -20deg);
-		        -webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.28);
-		        -moz-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.28);        
-		        -webkit-transform: rotate(56deg) skew(0deg,-20deg);
-		        -moz-transform: rotate(56deg) skew(0deg,-20deg);
-		        -ms-transform: rotate(56deg) skew(0deg,-20deg);
-		        -o-transform: rotate(56deg) skew(0deg,-20deg);
-		        transform: rotate(56deg) skew(0deg,-20deg);
-		        width: 20px;
-		        margin-top:-14px;	
-		        z-index:-5
+						box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.28);
+						content: "";
+						display: inline-block;
+						height: 20px;
+						margin-left: 30px;
+						position: absolute;
+						transform: rotate(56deg) skew(0deg, -20deg);
+						-webkit-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.28);
+						-moz-box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.28);				
+						-webkit-transform: rotate(56deg) skew(0deg,-20deg);
+						-moz-transform: rotate(56deg) skew(0deg,-20deg);
+						-ms-transform: rotate(56deg) skew(0deg,-20deg);
+						-o-transform: rotate(56deg) skew(0deg,-20deg);
+						transform: rotate(56deg) skew(0deg,-20deg);
+						width: 20px;
+						margin-top:-14px;	
+						z-index:-5
 					}
 					.control-group{
 						width: 330px;
@@ -168,7 +168,7 @@
 						}
 						input[type="checkbox"]{
 							margin-left: -320px;
-    					margin-top: 8px;
+							margin-top: 8px;
 						}
 					}
 				}
@@ -182,18 +182,18 @@
 	.schedule_consultation{
 		.consultation_form{
 			border: 1px solid #aaa;
-	    margin: auto;
-	    padding: 30px 50px;
-	    margin-bottom: 50px;
-	    width: 900px;
-	    input[type="text"]{
-	    	width: 250px;
-	    	height: 28px;
-	    }
+			margin: auto;
+			padding: 30px 50px;
+			margin-bottom: 50px;
+			width: 900px;
+			input[type="text"]{
+				width: 250px;
+				height: 28px;
+			}
 			label.page-title{
 				font-size: 30px;
-		    margin-bottom: 20px;
-		    margin-top: 10px;
+				margin-bottom: 20px;
+				margin-top: 10px;
 			}
 			.first-row{
 				border-bottom: solid 1px #aaa;
@@ -205,18 +205,18 @@
 	.find_registry_page{
 		.registry_form{
 			border: 1px solid #aaa;
-	    margin: auto;
-	    padding: 30px 50px;
-	    margin-bottom: 50px;
-	    width: 900px;
-	    input[type="text"]{
-	    	width: 250px;
-	    	height: 28px;
-	    }			
+			margin: auto;
+			padding: 30px 50px;
+			margin-bottom: 50px;
+			width: 900px;
+			input[type="text"]{
+				width: 250px;
+				height: 28px;
+			}			
 			label.page-title{
 				font-size: 30px;
-		    margin-bottom: 20px;
-		    margin-top: 10px;
+				margin-bottom: 20px;
+				margin-top: 10px;
 			}
 			.first-row{
 				border-bottom: solid 1px #aaa;
@@ -228,62 +228,62 @@
 	.registry_view_page{
 		.registry_view{
 			border: 1px solid #aaa;
-	    margin: auto;
-	    padding: 30px 50px;
-	    margin-bottom: 50px;
-	    width: 900px;
-	    .first-row{
-	    	.span3{
-	    		.span2{
-	    			margin-left: 10px;
-	    			padding-top: 5px;
-	    		}
-	    		.email-icon{
-	    			background: url("stripe.png") no-repeat scroll -140px -6px transparent;
-	    			height: 27px;
-				    margin-left: 0;
-				    width: 30px;
-	    		}
-	    		.print-icon{
-	    			background: url("stripe.png") no-repeat scroll -228px -3px transparent;
-	    			height: 27px;
-				    margin-left: 0;
-				    width: 30px;
-	    		}
-	    	}
-	    }
-	    .second-row{
-	    	.table-hover{
-	    		tr{	    			
-	    			&:hover{
-		    			cursor: pointer;
-		    		}
-	    		}
-	    		
-	    	}
-	    }
-	    .third-row{
-	    	text-align: right;
+			margin: auto;
+			padding: 30px 50px;
+			margin-bottom: 50px;
+			width: 900px;
+			.first-row{
+				.span3{
+					.span2{
+						margin-left: 10px;
+						padding-top: 5px;
+					}
+					.email-icon{
+						background: url("stripe.png") no-repeat scroll -140px -6px transparent;
+						height: 27px;
+						margin-left: 0;
+						width: 30px;
+					}
+					.print-icon{
+						background: url("stripe.png") no-repeat scroll -228px -3px transparent;
+						height: 27px;
+						margin-left: 0;
+						width: 30px;
+					}
+				}
+			}
+			.second-row{
+				.table-hover{
+					tr{						
+						&:hover{
+							cursor: pointer;
+						}
+					}
+					
+				}
+			}
+			.third-row{
+				text-align: right;
 
-	    	.btn-purchase{
-	    		background-color: rgb(217, 227, 225);
-				  border-style: none;
+				.btn-purchase{
+					background-color: rgb(217, 227, 225);
+					border-style: none;
 					padding: 6px 30px;
-	    	}
-	    }
+				}
+			}
 		}
 	}
 	.results-page{
 		.results-content{
 			border: 1px solid #aaa;
-	    margin: auto;
-	    padding: 30px 50px;
-	    margin-bottom: 50px;
-	    width: 900px;
-	    label.page-title{
+			margin: auto;
+			padding: 30px 50px;
+			margin-bottom: 50px;
+			width: 900px;
+			label.page-title{
 				font-size: 30px;
-		    margin-bottom: 20px;
-		    margin-top: 10px;
+				margin-bottom: 20px;
+				margin-top: 10px;
 			}
 			.last-row{
 				text-align: right;
@@ -292,11 +292,11 @@
 					font-weight:300;
 					color: black;
 					background-color: rgb(217, 227, 225);
-			    padding: 6px 30px;
-			    width: 120px;
-			    &:hover{
-			    	text-decoration: none;			    	
-			    }
+					padding: 6px 30px;
+					width: 120px;
+					&:hover{
+						text-decoration: none;						
+					}
 				}				
 			}
 		}
@@ -324,31 +324,31 @@
 				}
 				.price-box{
 					padding-bottom: 5px;
-    			padding-top: 10px;
+					padding-top: 10px;
 					background-color: rgb(236, 236, 236);
-			    border: 1px solid rgb(204, 204, 204);
-			    margin: 20px auto;
-			    width: 300px;
-			    .price{
-			    	margin-top: 10px;
-			    	font-size:30px;			    	
-			    }
-			    .offer-option{
-			    	margin-top: 10px;
-			    	font-weight: 300;
-			    	font-size: 16px;
-			    }
+					border: 1px solid rgb(204, 204, 204);
+					margin: 20px auto;
+					width: 300px;
+					.price{
+						margin-top: 10px;
+						font-size:30px;						
+					}
+					.offer-option{
+						margin-top: 10px;
+						font-weight: 300;
+						font-size: 16px;
+					}
 				}
 			}
 			.custom-btn{
 				width: 218px;
 				height: 32px;
-    		padding-top: 16px;
+				padding-top: 16px;
 				font-size: 20px;
 				background-color: rgb(220, 226, 225);
-		    background-image: none;
-		    border-radius: 0 0 0 0;
-		    height: 32px;
+				background-image: none;
+				border-radius: 0 0 0 0;
+				height: 32px;
 			}
 		}
 
@@ -365,7 +365,7 @@
 				}
 				.stripe-png{
 					background: url("stripe.png") no-repeat scroll 0 0 transparent;
-		    	width:27px;
+					width:27px;
 					height:27px;				
 				}
 				.t-icon{
@@ -380,7 +380,7 @@
 				.email-icon{
 					background-position: -146px -6px;
 					padding-left: 0px;
-			    padding-top: 3px;
+					padding-top: 3px;
 				}
 			}		
 		}
@@ -393,7 +393,7 @@
 				padding-right: 150px;
 				.sub-title{
 					font-size: 20px;
-    			font-weight: 600;
+					font-weight: 600;
 				}
 			}
 			.second-navigation{
@@ -406,10 +406,10 @@
 					border-radius: 5px;
 					background-color: #414143;
 					color: white;
-			    font-size: 20px;
-			    height: 20px;
-			    margin-right: 10px;
-			    padding: 10px 8px;
+					font-size: 20px;
+					height: 20px;
+					margin-right: 10px;
+					padding: 10px 8px;
 				}
 				.active{
 					background-color: white;
@@ -432,24 +432,24 @@
 	.new-payment-page{
 		.registry_form{
 			border: 1px solid #aaa;
-	    margin: auto;
-	    padding: 30px 50px;
-	    margin-bottom: 50px;
-	    width: 900px;
-	    input[type="text"]{
-	    	width: 250px;
-	    	height: 28px;
-	    }			
-	    select{
-	    	height: 36px;
-		    padding-bottom: 5px;
-		    padding-top: 7px;
-		    width: 120px;
-	    }
+			margin: auto;
+			padding: 30px 50px;
+			margin-bottom: 50px;
+			width: 900px;
+			input[type="text"]{
+				width: 250px;
+				height: 28px;
+			}			
+			select{
+				height: 36px;
+				padding-bottom: 5px;
+				padding-top: 7px;
+				width: 120px;
+			}
 			label.page-title{
 				font-size: 30px;
-		    margin-bottom: 20px;
-		    margin-top: 10px;
+				margin-bottom: 20px;
+				margin-top: 10px;
 			}
 			.first-row{
 				border-bottom: solid 1px #aaa;

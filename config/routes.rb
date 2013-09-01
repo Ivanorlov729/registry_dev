@@ -1,4 +1,7 @@
 Registry::Application.routes.draw do
+  get "payment/new"
+  match "payment/checkout"
+  match "payment/purchase"
   resources :events
   resources :offers
 

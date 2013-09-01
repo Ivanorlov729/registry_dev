@@ -32,6 +32,9 @@ gem 'bcrypt-ruby'
 gem 'activeadmin'
 gem 'paperclip'
 gem 'thin'
+
+gem 'activemerchant'
+gem 'authorize-net'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

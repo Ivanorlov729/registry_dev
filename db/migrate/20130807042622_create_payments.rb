@@ -5,15 +5,13 @@ class CreatePayments < ActiveRecord::Migration
       t.belongs_to :order
       t.string :first_name
       t.string :last_name
-      t.string :card_number
-      t.date :exp_date
-      t.string :security_code
-      t.string :telephone
+      t.string :ccard_last4
+      t.string :card_type
+      t.string :exp_year
+      t.string :exp_month
       t.string :email
-      t.boolean :means_contact_telephone
-      t.boolean :means_contact_email
-      t.string :address1
-      t.string :address2
+      t.string :address
+      t.string :optional_address
       t.string :city
       t.string :state
       t.string :zip_code
