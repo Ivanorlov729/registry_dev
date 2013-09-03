@@ -74,15 +74,8 @@ class PaymentController < ApplicationController
 		return
 	end
 
+
 	def purchase
 		render :text => params.inspect and return
-		
-		
-		respond_to do |format|
-			format.html { render action: "purchase" }
-			format.json { render json: @order.errors, status: :unprocessable_entity }
-		end
-
-		return
 	end
 end

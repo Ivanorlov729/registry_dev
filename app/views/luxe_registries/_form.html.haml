@@ -6,45 +6,49 @@
 	.row.second-row
 		%label.sub-title EVENT INFORMATION
 		.form-inputs
-			= f.input :event_id, :label=>"Event", :collection=>Event.all, input_html: { :style=>'width: 310px;' }
-			= f.input :event_date, :label=>"Event"
+			= f.input :event_id, :label=>"Event*", :collection=>Event.all, input_html: { :style=>'width: 310px;' }, required: false
+			= f.input :event_date, :label=>"Event date*", required: false
 	.row.third-row
 		%label.sub-title REGISTRANT INFORMATION
 		.span5{:style=>"margin-left: 0px;"}
+			%p.sub-title Registrant
+			%br/
 			= f.fields_for :registrant_info do |ri|
-				= ri.input :first_name
-				= ri.input :last_name
+				= ri.input :first_name, label: "First Name*", required: false
+				= ri.input :last_name, label: "Last Name*", required: false
 				%br/
 				%br/
-				= ri.input :address1
-				= ri.input :address2
-				= ri.input :city
+				= ri.input :address1, required: false, label: "Address1*"
+				= ri.input :address2, required: false, label: "Address2"
+				= ri.input :city, required: false, label: "City*"
 				.form-horizontal
-					= ri.input :state
-				= ri.input :zipcode
-				= ri.input :daytime_phone
-				= ri.input :email
+					= ri.input :state, required: false, label: "State*"
+				= ri.input :zipcode, required: false, label: "Zip Code*"
+				= ri.input :daytime_phone, required: false, label: "Daytime Phone*"
+				= ri.input :email, required: false, label: "Email*"
 		.span3
+			%p.sub-title Co-Registrant
+			%br/
 			= f.fields_for :co_registrant_info do |cri|
-				= cri.input :first_name
-				= cri.input :last_name
+				= cri.input :first_name, required: false, label: "First Name*"
+				= cri.input :last_name, required: false, label: "Last Name*"
 				= cri.input :use_regis_addr, :input_html => {value: '1'}, :label=>false
 				%label{:style=>"margin-bottom: 20px;"} Use registrant's address
-				= cri.input :address1
-				= cri.input :address2
-				= cri.input :city
+				= cri.input :address1, required: false, label: "Address1*"
+				= cri.input :address2, required: false, label: "Address2"
+				= cri.input :city, required: false, label: "City*"
 				.form-horizontal
-					= cri.input :state
-				= cri.input :zipcode
-				= cri.input :daytime_phone
-				= cri.input :email
+					= cri.input :state, required: false, label: "State*"
+				= cri.input :zipcode, required: false, label: "Zip Code*"
+				= cri.input :daytime_phone, required: false, label: "Daytime Phone*"
+				= cri.input :email, required: false, label: "Email*"
 	.row.fourth-row
 		%label.sub-title REGISTRANT'S PASSWORD
 		%label Password should be 8-12 characters long.
 		%br/
 		= f.fields_for :registrant do |reg|
-			= reg.input :password
-			= reg.input :password_confirmation
+			= reg.input :password, required: false, label: "Password*"
+			= reg.input :password_confirmation, required: false, label: "Confirm Password*"
 	.row.fifth-row
 		%label.sub-title SHIPPING PREFERENCES
 		%br/

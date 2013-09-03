@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Event.find_or_create_by_name(:name=>"Baby Registry")
+Event.find_or_create_by_name(:name=>"Baby")
 Event.find_or_create_by_name(:name=>"Bridal")
 Event.find_or_create_by_name(:name=>"House Warming")
-Event.find_or_create_by_name(:name=>"Lavish")
+Event.find_or_create_by_name(:name=>"Lavish Gifts")
 puts 'Created event list'

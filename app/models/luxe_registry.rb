@@ -17,8 +17,9 @@ class LuxeRegistry < ActiveRecord::Base
   accepts_nested_attributes_for :registrant_info, 		:allow_destroy=>true, :reject_if => :all_blank
   accepts_nested_attributes_for :co_registrant_info, 	:allow_destroy=>true, :reject_if => :all_blank
 
-  validates :user_id, :event_id, :event_date, :presence => true;
-
+  validates :user_id, :event_id, :event_date, :presence => true
+  validates :registrant_info, :co_registrant_info, presence: true
+  
   def registrant_name
   	[self.registrant_info.first_name, self.registrant_info.last_name].reject(&:blank?).join(" ")
   end

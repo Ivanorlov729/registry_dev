@@ -1,6 +1,7 @@
 .row
 	.span3.white-box
-		%p.sub-title LUXE-REGISTRY
+		%p.sub-title 
+			= link_to 'LUXE-REGISTRY', root_url, :class=>'sub-title'
 		%ul
 			%li
 				= link_to "CREATE A REGISTRY", new_luxe_registry_path

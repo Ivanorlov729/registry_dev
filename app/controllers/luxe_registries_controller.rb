@@ -48,6 +48,11 @@ class LuxeRegistriesController < ApplicationController
   def create
     @luxe_registry = LuxeRegistry.new(params[:luxe_registry])
     @luxe_registry.user_id = current_user.id
+
+    @luxe_registry.build_registrant
+    @luxe_registry.build_registrant_info
+    @luxe_registry.build_co_registrant_info
+    
     respond_to do |format|
       if @luxe_registry.save
         format.html { redirect_to luxe_registries_path, notice: 'Luxe registry was successfully created.' }
