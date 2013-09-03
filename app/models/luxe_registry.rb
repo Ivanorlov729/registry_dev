@@ -19,7 +19,7 @@ class LuxeRegistry < ActiveRecord::Base
 
   validates :user_id, :event_id, :event_date, :presence => true
   validates :registrant_info, :co_registrant_info, presence: true
-  
+
   def registrant_name
   	[self.registrant_info.first_name, self.registrant_info.last_name].reject(&:blank?).join(" ")
   end
@@ -30,4 +30,5 @@ class LuxeRegistry < ActiveRecord::Base
   def event_name
     self.event.name
   end
+
 end
