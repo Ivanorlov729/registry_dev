@@ -1,15 +1,5 @@
 .row.luxe-registry-page
-	.row.top-row
-		.top-nav
-			%ul
-				%li.active
-					%a{:href=>root_url} LUXE-REGISTRY
-				%li
-					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
-				%li
-					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
-				%li
-					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	= render 'layouts/page_top_header'
 	.row.second-row
 		.input-form
 			= render 'form'

@@ -1,15 +1,5 @@
 .row.payment-page
-	.row.top-row
-		.top-nav
-			%ul
-				%li.active
-					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
-				%li
-					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
-				%li
-					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
-				%li
-					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	= render 'layouts/page_top_header'
 	.row.new-payment-page
 		.payment-page			
 			%label.page-title Payment Method

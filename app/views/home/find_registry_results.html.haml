@@ -1,15 +1,5 @@
 .row.luxe-registry-page
-	.row.top-row
-		.top-nav
-			%ul
-				%li
-					%a{:href=>new_luxe_registry_path} LUXE-REGISTRY
-				%li
-					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
-				%li.active
-					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
-				%li
-					%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+	= render 'layouts/page_top_header'
 	.row.results-page
 		.results-content
 			%label.page-title Search Results
@@ -38,6 +28,6 @@
 							%td
 								= registry.event.name
 							%td
-								= registry.event_date.strftime('%d/%m/%Y')
+								= registry.event_date.strftime('%m/%d/%Y')
 			.row.last-row
 				= link_to "< SEARCH AGAIN", find_registry_path, :class=>"btn-search"

@@ -1,15 +1,5 @@
 .row.luxe-registry-page
-  .row.top-row
-    .top-nav
-      %ul
-        %li.active
-          %a{:href=>new_luxe_registry_path} LUXE-REGISTRY
-        %li
-          %a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
-        %li
-          %a{:href=>find_registry_path} SEARCH FOR A REGISTRY
-        %li
-          %a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
+  = render 'layouts/page_top_header'
   .row.second-row
     .registry-list
       %label.page-title My Registries
@@ -33,7 +23,7 @@
               %td= luxe_registry.registrant_name
               %td= luxe_registry.co_registrant_name
               %td= luxe_registry.event.name
-              %td= luxe_registry.event_date.strftime('%d/%m/%Y')
+              %td= luxe_registry.event_date.strftime('%m/%d/%Y')
               %td
                 = link_to 'Show', luxe_registry, :class=>"btn btn-mini"
                 = link_to 'Edit', edit_luxe_registry_path(luxe_registry), :class=>"btn btn-mini"

@@ -1,0 +1,25 @@
+.row.top-row
+	.top-nav
+		%ul
+			- if current_page?(root_url)
+				%li.active
+					%a{:href=>root_url} LUXE-REGISTRY
+			-else
+				%li
+					%a{:href=>root_url} LUXE-REGISTRY
+
+			- if current_page?(schedule_consultation_path)
+				%li.active
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+			- else
+				%li
+					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+
+			- if current_page?(luxe_registries_path)
+				%li.active
+					%a{:href=>luxe_registries_path} MANAGE YOUR REGISTRY
+			- else
+				%li
+					%a{:href=>luxe_registries_path} MANAGE YOUR REGISTRY
+			%li
+				%a{:href=>"http://luxesocialevents.stgng.com/"} SHOP LSE
