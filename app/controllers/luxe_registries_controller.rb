@@ -48,6 +48,7 @@ class LuxeRegistriesController < ApplicationController
   def create
     @luxe_registry = LuxeRegistry.new(params[:luxe_registry])
     @luxe_registry.user_id = current_user.id
+    
     #render :text=>params[:luxe_registry].inspect and return
     respond_to do |format|
       if @luxe_registry.save

@@ -38,10 +38,11 @@
         %input{:type=>"checkbox", :value=>"1", :name=>"offers_2", :id=>"offer_offers_2"}
         %label Limited Edition
   .form-actions
-    = f.button :submit, "Save"
-    - if @offer.id.present? 
-      = link_to "Preview", preview_path+"?id="+@offer.id.to_s, :class=>"btn"
-      = link_to 'Destroy', @offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class=>"btn"
+    .span1.offset2
+      = f.button :submit, "Save"
+    .span2
+      = link_to 'Back', offers_path, class: 'btn btn-inverse'
+    
 
 
 :javascript
