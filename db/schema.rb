@@ -2543,12 +2543,12 @@ ActiveRecord::Schema.define(:version => 20130901090031) do
     t.string   "method"
     t.string   "email"
     t.string   "token_key"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "optional_address"
     t.string   "tel_number"
-    t.string   "is_telephone",     :limit => 25
-    t.string   "is_email",         :limit => 25
+    t.boolean  "is_telephone"
+    t.boolean  "is_email"
   end
 
   add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
@@ -2622,6 +2622,7 @@ ActiveRecord::Schema.define(:version => 20130901090031) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "ccard_last4"
+    t.string   "card_type"
     t.string   "exp_year"
     t.string   "exp_month"
     t.string   "email"
