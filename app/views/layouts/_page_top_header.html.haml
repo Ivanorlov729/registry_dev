@@ -8,12 +8,12 @@
 				%li
 					%a{:href=>root_url} LUXE-REGISTRY
 
-			- if current_page?(schedule_consultation_path)
+			- if current_page?(find_registry_path)
 				%li.active
-					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
 			- else
 				%li
-					%a{:href=>schedule_consultation_path} SCHEDULE A CONSULTATION
+					%a{:href=>find_registry_path} SEARCH FOR A REGISTRY
 
 			- if current_page?(luxe_registries_path)
 				%li.active
