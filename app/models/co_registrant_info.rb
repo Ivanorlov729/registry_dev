@@ -1,6 +1,6 @@
 class CoRegistrantInfo < ActiveRecord::Base
   attr_accessible :address1, :address2, :city, :daytime_phone, :email, :first_name, :last_name, :state, :use_regis_addr, :zipcode
-  validates :first_name, :last_name, presence: true
+  #validates :first_name, :last_name, presence: true
   validate :use_registrant_address
 
   def use_registrant_address  	

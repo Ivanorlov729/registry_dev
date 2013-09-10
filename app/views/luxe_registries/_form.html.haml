@@ -30,18 +30,18 @@
 			%p.sub-title Co-Registrant
 			%br/
 			= f.fields_for :co_registrant_info do |cri|
-				= cri.input :first_name, required: false, label: "First Name*"
-				= cri.input :last_name, required: false, label: "Last Name*"
+				= cri.input :first_name, required: false, label: "First Name"
+				= cri.input :last_name, required: false, label: "Last Name"
 				= cri.input :use_regis_addr, :input_html => {value: '1'}, :label=>false
 				%label{:style=>"margin-bottom: 20px;"} Use registrant's address
-				= cri.input :address1, required: false, label: "Address1*"
+				= cri.input :address1, required: false, label: "Address1"
 				= cri.input :address2, required: false, label: "Address2"
-				= cri.input :city, required: false, label: "City*"
+				= cri.input :city, required: false, label: "City"
 				.form-horizontal
-					= cri.input :state, required: false, label: "State*"
-				= cri.input :zipcode, required: false, label: "Zip Code*"
-				= cri.input :daytime_phone, required: false, label: "Daytime Phone*"
-				= cri.input :email, required: false, label: "Email*"
+					= cri.input :state, required: false, label: "State"
+				= cri.input :zipcode, required: false, label: "Zip Code"
+				= cri.input :daytime_phone, required: false, label: "Daytime Phone"
+				= cri.input :email, required: false, label: "Email"
 	.row.fourth-row
 		%label.sub-title REGISTRANT'S PASSWORD
 		%label Password should be 8-12 characters long.
