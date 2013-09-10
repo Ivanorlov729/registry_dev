@@ -7,7 +7,10 @@
 		%label.sub-title EVENT INFORMATION
 		.form-inputs
 			= f.input :event_id, :label=>"Event*", :collection=>Event.all, input_html: { :style=>'width: 310px;' }, required: false
-			= f.input :event_date, :label=>"Event date*", required: false
+			/= f.input :event_date, :label=>"Event date*", required: false
+			= select_month(Date.today, {}, {:name=>"luxe_registry[event_date(2i)]", :id=>"luxe_registry_event_date_2i"})
+			= select_day(Date.today.day, {}, {:name=>"luxe_registry[event_date(3i)]", :id=>"luxe_registry_event_date_3i"})
+			= select_year Date.today.year, {start_year: Date.today.year-15, end_year: Date.today.year+3}, {:name=>"luxe_registry[event_date(1i)]", :id=>"luxe_registry_event_date_1i"}
 	.row.third-row
 		%label.sub-title REGISTRANT INFORMATION
 		.span5{:style=>"margin-left: 0px;"}
@@ -53,7 +56,10 @@
 		%label.sub-title SHIPPING PREFERENCES
 		%br/
 		= f.fields_for :registrant do |reg|
-			= reg.input :before_this_date
+			/= reg.input :before_this_date
+			= select_month(Date.today, {}, {:name=>"luxe_registry[registrant_attributes][before_this_date(2i)]", :id=>"luxe_registry_registrant_attributes_before_this_date_2i"})
+			= select_day(Date.today.day, {}, {:name=>"luxe_registry[registrant_attributes][before_this_date(3i)]", :id=>"luxe_registry_registrant_attributes_before_this_date_3i"})
+			= select_year Date.today.year, {start_year: Date.today.year-15, end_year: Date.today.year+3}, {:name=>"luxe_registry[registrant_attributes][before_this_date(1i)]", :id=>"luxe_registry_registrant_attributes_before_this_date_1i"}
 			.row.form-horizontal{:style=>"padding:0px;"}
 				.span4.check-box
 					%label Registry Gifts will be sent to:
