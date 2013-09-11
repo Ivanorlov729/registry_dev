@@ -6,6 +6,8 @@ class Order < ActiveRecord::Base
 	validates_presence_of :first_name, :last_name, :email, :address, :optional_address, :city, :state, :zip_code
 	
 	has_one :payment,               :dependent => :destroy
+  has_one :order_products
+  has_one :offer,                 :through => :order_products
 
 	def price_in_cents
     self.balance_amount.to_i * 100
@@ -14,7 +16,11 @@ class Order < ActiveRecord::Base
   def price
   	self.balance_amount
   end
-
+  
+  def amount_balance
+    ActionController::Base.helpers.number_to_currency(self.balance_amount)
+  end
+  
   def complete(card)
   	payment_transaction 									= self.build_payment
     payment_transaction.user_id 					= self.user_id
@@ -33,8 +39,6 @@ class Order < ActiveRecord::Base
     payment_transaction.price 						= self.price
     payment_transaction.transaction_id 		= self.token_key
 
-    if payment_transaction.save
-	    session[:current_offer] = nil
-	  end
-  end
+    payment_transaction.save
+	end
 end

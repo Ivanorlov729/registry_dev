@@ -1,100 +1,63 @@
-.row.luxe-registry-page
+.row.payment-page
 	= render 'layouts/page_top_header'
 	.row.new-payment-page
-		.registry_form
+		.payment-page			
 			%label.page-title Payment Method
-			%label Please fill in the information below to add a new credit card.
-			%label For questions regarding privacy protection, please see our Privacy Policy.
-			= form_for @payment, :url=>"/new_payment", html: {:class=>"form-inline", :id=>"account_setting_form"} do |f|
-				.row
-					.span4
-						.control-group
-							%label.control-label{:for => "payment_first_name"} First Name*
-							.controls
-								= f.text_field :first_name, placeholder: "first name"
-						.control-group
-							%label.control-label{:for => "payment_last_name"} Last Name*
-							.controls
-								= f.text_field :last_name, placeholder: "last name"
-						.control-group
-							%label.control-label{:for => "payment_card_number"} Card Number*
-							.controls
-								= f.text_field :card_number, placeholder: "card number"
-						.control-group
-							%label.control-label{:for => "payment_exp_date"} Expiration date*
-							.controls
-								= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}
-								= select_year nil, {start_year: Date.today.year+1, end_year: Date.today.year+15}, {name: nil, id: "card_year"}
-								= f.hidden_field :exp_date
-						.control-group
-							%label.control-label{:for => "payment_security_code"} Security Code*
-							.controls
-								= f.text_field :security_code, placeholder: "security code"
-						.control-group
-							%label.control-label{:for => "payment_telephone"} Telephone*
-							.controls
-								= f.text_field :telephone
-						.control-group
-							%label.control-label{:for => "payment_email"} Email*
-							.controls
-								= f.text_field :email, placeholder: "email"
-						
+			%label Please fill in the information below to add a new credit card
+			%label 
+				For questions regarding privacy protection, please see ourt 
+				%a{:href=>"#"} Privacy Policy
+			.row.last-row
+			.row.input-form
+				= simple_form_for @order, :url=>payment_checkout_path do |f|
+					- if @order.errors.any?
+						.error_messages
+							%h4
+								= pluralize(@order.errors.count, "error")
+								prohibited this user from being saved:
+							%ul
+								- @order.errors.full_messages.each do |msg|
+									%li= msg
+					.span5
+						= f.input :first_name, :label=>"First Name*", required: false
+						= f.input :last_name, :label=>"Last Name*", required: false
+						%label Card Number*
+						= text_field_tag :card_number, nil, name: 'card_number'
+						.row
+							%label Expiration date*
+							.span2
+								= select_month Date.today.month, {}, {:"data-stripe"=>"exp-month", :name=>'exp_month'}
+							.span2
+								= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {:"data-stripe"=>"exp-year", :name=>'exp_year'}
+						%label Security Code
+						= text_field_tag :card_number, nil, name: 'security_code'
+						.row
+							%label Telephone
+							.span1
+								= text_field_tag 'tel_number[]', nil, :class=>"card_number", :maxlength=>"4", :id=>"tel_num1"
+							.span1
+								= text_field_tag 'tel_number[]', nil, :class=>"card_number", :maxlength=>"4", :id=>"tel_num2"
+							.span1
+								= text_field_tag 'tel_number[]', nil, :class=>"card_number", :maxlength=>"4", :id=>"tel_num3"
+							/= f.hidden_field :tel_number
+						= f.input :email
+						%label Preferred Means of Contact:						
+						.span2.checkbox
+							= f.input :is_telephone, as: :boolean, :label=>'Telephone'
+						.span2.checkbox
+							= f.input :is_email, as: :boolean, :label=>'Email'									
 					.span4
 						%label Billing Address
-						.control-group
-							%label.control-label{:for => "payment_address1"} Address1*
-							.controls
-								= f.text_field :address1, placeholder: "address1"
-						.control-group
-							%label.control-label{:for => "payment_address2"} Address2
-							.controls
-								= f.text_field :address2, placeholder: "address2"
-						.control-group
-							%label.control-label{:for => "payment_city"} City*
-							.controls
-								= f.text_field :city, placeholder: "city"
-						.control-group
-							%label.control-label{:for => "payment_state"} State*
-							.controls
-								= f.text_field :state, placeholder: "state"
-						.control-group
-							%label.control-label{:for => "payment_zip_code"} Zip Code*
-							.controls
-								= f.text_field :zip_code, placeholder: "zip_code"
-				.row
-					.span4
+						%br/
+						= f.input :address, :label=>"Addrewss1*", required: false
+						= f.input :optional_address, :label=>"Addrewss2", required: false
+						= f.input :city, :label=>"City*", required: false
+						= f.input :state, :label=>"State*", required: false
+						= f.input :zip_code, :label=>"Zip Code*", required: false
 						.row
-							%label Preferred Means of Contact:
-						.row
-							.span2{:style=>"margin-left: 0px;width: 130px;"}
-								%label.checkbox									
-									= f.check_box :means_contact_telephone 
-									Telephone
-							.span2{:style=>"margin-left: 0px;"}
-								%label.checkbox
-									= f.check_box :means_contact_email
-									Email
-
-					.span4
-						=f.submit "SAVE & CONTINUE", :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 8px 40px; margin-right: 80px; width: 200px; float: right;"
-						
-
-:javascript
-	var year = $("#card_year").val();
-	var month = $("#card_month").val();
-	$("#payment_exp_date").val(year+"/"+month+"/1");
-	$("#card_month").change(function(){
-		month = $(this).val();
-		$("#payment_exp_date").val(year+"/"+month+"/1");
-	});
-	$("#card_year").change(function(){
-		year = $(this).val();
-		$("#payment_exp_date").val(year+"/"+month+"/1");
-	});
-	
-	$("#means_contact_telephone").change(function(){
-		#("#payment_means_contact").val("0");
-	});
-	$("#means_contact_email").change(function(){
-		#("#payment_means_contact").val("1");
-	});
+							%br/
+							%br/
+							%br/
+							%br/
+							= f.submit 'SAVE & CONTINUE', :style=>"background-color: rgb(217, 227, 225);border: medium none;font-size: 18px;padding: 5px 40px;"
+			

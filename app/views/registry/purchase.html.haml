@@ -16,6 +16,7 @@
 						%a.btn.btn-purchase.custom-btn{:href=>payment_new_path} PURCHASE
 						%br/
 						%br/
+						
 						- if @offer.luxe_registry.present? and current_user.luxe_registries.include? @offer.luxe_registry
 							%br/
 						- else

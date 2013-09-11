@@ -17,11 +17,19 @@ class HomeController < ApplicationController
   
   def categories
     @registries = []
+    #if params[:event].nil?
+    #  @registries = LuxeRegistry.all
+    #else
+    #  event = Event.find_by_id params[:event]
+    #  @registries = event.luxe_registries if event
+    #end
+    
     if params[:event].nil?
-      @registries = LuxeRegistry.all
+      @registries = Offer.all
     else
       event = Event.find_by_id params[:event]
-      @registries = event.luxe_registries if event
+      @registries = event.offers if event
     end
+
   end
 end

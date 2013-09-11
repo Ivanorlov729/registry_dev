@@ -17,7 +17,7 @@ Registry::Application.routes.draw do
 
   get 'registry_view' => 'registry#registry_view'
   get 'purchase/:id' => 'registry#purchase'
-  get 'manage_registry' => 'registry#manage_registry'
+  get 'purchase_registry' => 'registry#purchase_registry'
   get '/registry_list/:id'  => 'registry#registry_list'
   get 'subscriptions' => 'registry#subscriptions'
  

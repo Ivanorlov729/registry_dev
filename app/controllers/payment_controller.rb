@@ -5,7 +5,9 @@ class PaymentController < ApplicationController
 	
 	def checkout
 		@order = current_user.orders.build
-		
+		order_product = @order.build_order_products
+
+
 		offer = Offer.find_by_id session[:current_offer]
 		redirect_to :back if offer.nil?
 		
@@ -20,12 +22,12 @@ class PaymentController < ApplicationController
 		
 		amount = @order.price_in_cents
 		credit_card = ActiveMerchant::Billing::CreditCard.new(
-			:number								=>params[:card_number],
+			:number					=>params[:card_number],
 			:verification_value		=>params[:security_code],
-			:month								=>params[:exp_month],
-			:year									=>params[:exp_year],
-			:first_name						=>params[:order][:first_name],
-			:last_name						=>params[:order][:last_name]
+			:month					=>params[:exp_month],
+			:year					=>params[:exp_year],
+			:first_name				=>params[:order][:first_name],
+			:last_name				=>params[:order][:last_name]
 		)
 
 
@@ -34,13 +36,15 @@ class PaymentController < ApplicationController
 				:ip => request.remote_ip,
 				:billing_address => {
 					# :company	=> current_user.company_name,
-					:first_name => params[:order][:first_name],
-					:last_name => params[:order][:last_name],
-					:address1 => params[:order][:address],
-					:city		 => params[:order][:city],
-					:state		=> params[:order][:state],
-					:country	=> params[:order][:country],
-					:zip			=> params[:order][:zip_code]
+					:first_name 	=> params[:order][:first_name],
+					:last_name 		=> params[:order][:last_name],
+					:address1 		=> params[:order][:address],
+					:city		 	=> params[:order][:city],
+					:state			=> params[:order][:state],
+					:country		=> params[:order][:country],
+					:zip			=> params[:order][:zip_code],
+					:phone			=> tel_num,
+					:email			=> params[:order][:email]
 				}
 			}
 	
@@ -55,7 +59,11 @@ class PaymentController < ApplicationController
 				@order.payment_option = 'card'
 				#@order.balance_amount = @order.calculate_price.fractional
 				if @order.save && @order.complete(credit_card)
+					order_product.offer_id = offer.id
+					order_product.save
+
 					session[:order_id] = nil
+					session[:current_offer] = nil
 					flash[:notice] = t('controllers.payment_process.update.success')
 					redirect_to root_url and return
 				end

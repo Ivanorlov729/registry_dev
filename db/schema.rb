@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130901090031) do
+ActiveRecord::Schema.define(:version => 20130911111124) do
 
   create_table "actions", :primary_key => "aid", :force => true do |t|
     t.string "type",       :limit => 32,         :default => "",  :null => false
@@ -2529,6 +2529,16 @@ ActiveRecord::Schema.define(:version => 20130901090031) do
 
   add_index "offers", ["event_id"], :name => "index_offers_on_event_id"
 
+  create_table "order_products", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "offer_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "order_products", ["offer_id"], :name => "index_order_products_on_offer_id"
+  add_index "order_products", ["order_id"], :name => "index_order_products_on_order_id"
+
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
     t.string   "balance_amount"
@@ -2625,6 +2635,7 @@ ActiveRecord::Schema.define(:version => 20130901090031) do
     t.string   "card_type"
     t.string   "exp_year"
     t.string   "exp_month"
+    t.string   "telephone"
     t.string   "email"
     t.string   "address"
     t.string   "optional_address"

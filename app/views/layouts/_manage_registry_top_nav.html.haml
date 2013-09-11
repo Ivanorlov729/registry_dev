@@ -10,12 +10,12 @@
 		%li
 			= link_to 'Account Settings', account_settings_path
 
-	- if params[:action] == 'manage_registry'	
+	- if params[:action] == 'purchase_registry'
 		%li.select
-			= link_to 'My Purchases', manage_registry_path
+			= link_to 'My Purchases', purchase_registry_path
 	- else
 		%li
-			= link_to 'My Purchases', manage_registry_path
+			= link_to 'My Purchases', purchase_registry_path
 
 	- if params[:action] == 'subscriptions'
 		%li.select

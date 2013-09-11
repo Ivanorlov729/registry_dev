@@ -9,6 +9,7 @@ class CreatePayments < ActiveRecord::Migration
       t.string :card_type
       t.string :exp_year
       t.string :exp_month
+      t.string :telephone
       t.string :email
       t.string :address
       t.string :optional_address

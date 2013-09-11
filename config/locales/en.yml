@@ -12,7 +12,7 @@ en:
       complete:
         notice:       "Thank you for your submission."
       update:
-        success:      'Thank you for your submission. You will receive a confirmation email shortly.'
+        success:      'Thank you for your purchase. You will receive a confirmation email shortly.'
         card_error:   'Credit Card could not be processed: %{msg}.'
     submission_step:
       draft:

@@ -8,9 +8,11 @@ class RegistryController < ApplicationController
   def purchase
     session[:current_offer] = params[:id]
     @offer = Offer.find_by_id params[:id]
+    session[:current_offer] = @offer.id
   end
 
-  def manage_registry
+  def purchase_registry
+    @purchases = current_user.payments
   end
   def subscriptions
   end
@@ -29,11 +31,11 @@ class RegistryController < ApplicationController
 
   def new_payment
     if request.post? || request.put?
-      @payment = @payment = current_user.payments.build(params[:payment])
+      @payment = current_user.orders.build(params[:order])
       #render :text => @payment.inspect and return
       redirect_to :action => :account_settings and return
     end
-    @payment ||= Payment.new
+    @order = Order.new
   end
 
 	
